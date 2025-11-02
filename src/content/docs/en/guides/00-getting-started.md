@@ -1,5 +1,5 @@
 ---
-title: Getting started
+title: Getting Started
 ---
 
 Welcome to the ManaoBot wiki! This wiki has all resources for using ManaoBot.

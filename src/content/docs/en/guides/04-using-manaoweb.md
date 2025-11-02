@@ -1,5 +1,5 @@
 ---
-title: Using Manao
+title: Using ManaoWeb
 ---
 
 Once you have run the bot, you can now access the [ManaoWeb](http://localhost:3000) at `http://localhost:3000`. ManaoWeb provides a simple interface for managing with various things. Here is what you can do in ManaoWeb

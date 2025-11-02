@@ -1,3 +1,7 @@
 :root {
-  --sl-font: 'Mitr', sans-serif;
+  --sl-font: 'Sarabun', sans-serif;
+}
+
+.sidebar, .header, h1, h2, nav {
+  font-family: 'Mitr', sans-serif;
 }

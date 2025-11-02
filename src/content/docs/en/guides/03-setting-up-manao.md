@@ -11,7 +11,7 @@ Setting up Manao is a simple process. This continues from the previous guide whe
 
 At first, you will be prompt for language (English/Thai). Use your arrow keys to select and press `Enter` to confirm.
 
-Then, a step-by-step guide will be shown on how to retrieve client id and secrets. If you have read [this guide](https://github.com/wrong-lang/manao/wiki/Retrieving-Client-ID-and-Secret-from-Twitch) you may skip this by typing `n` and press `Enter`.
+Then, a step-by-step guide will be shown on how to retrieve client id and secrets. If you have read [this guide](/en/guides/01-retrieve-client-id-and-secrets-from-twitch) you may skip this by typing `n` and press `Enter`.
 
 Another confirmation prompt will be shown, press `Enter` again to skip.
 

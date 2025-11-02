@@ -1,5 +1,5 @@
 ---
-title: Adding overlays in OBS
+title: Adding Overlays in OBS
 ---
 
 Once you have configured and started ManaoBot, you can now add various overlays to your OBS scene to enhance your stream visuals! Many of the bot's commands are also integrated with the overlay too, such as the `!nickname` command that allows user to set their custom name in the chat overlay.

@@ -1,5 +1,5 @@
 ---
-title: Linking channel points to soundboard
+title: Linking Channel Points to Soundboard
 ---
 
 Biggest feature added in Manao version 2.1.0 was the Channel points manager, user can now redeem channel points to play

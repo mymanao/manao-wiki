@@ -21,6 +21,8 @@ export default defineConfig({
         './src/styles/custom.css',
         '@fontsource/mitr/400.css',
         '@fontsource/mitr/600.css',
+        '@fontsource/sarabun/400.css',
+        '@fontsource/sarabun/600.css',
       ],
       social: [{icon: 'github', label: 'GitHub', href: 'https://github.com/wrong-lang/manao'}],
       sidebar: [
@@ -31,21 +33,21 @@ export default defineConfig({
           },
           items: [
             {
-              label: 'Getting started',
+              label: 'Getting Started',
               translations: {
                 th: "มาเริ่มกันเถอะ"
               },
               slug: 'guides/00-getting-started'
             },
             {
-              label: 'Retrieving client id and secrets from Twitch',
+              label: 'Retrieving Client id and Secrets from Twitch',
               translations: {
                 th: "รับไคล์แอนต์ไอดีและซีเครทจากทวิช"
               },
               slug: 'guides/01-retrieve-client-id-and-secrets-from-twitch'
             },
             {
-              label: 'Project installation',
+              label: 'Project Installation',
               translations: {
                 th: "ติดตั้งโปรเจกต์"
               },
@@ -66,28 +68,28 @@ export default defineConfig({
               slug: 'guides/04-using-manaoweb'
             },
             {
-              label: 'Adding overlays in OBS',
+              label: 'Adding Overlays in OBS',
               translations: {
                 th: "เพิ่มโอเวอร์เลย์ใน OBS"
               },
               slug: 'guides/05-adding-overlays-in-obs'
             },
             {
-              label: 'Linking channel points to soundboard',
+              label: 'Linking Channel Points to Soundboard',
               translations: {
                 th: "ลิงก์แต้มช่องกับซาวด์บอร์ด"
               },
               slug: 'guides/06-linking-channel-points-to-soundboard'
             },
             {
-              label: 'Adding custom replies',
+              label: 'Adding Custom Replies',
               translations: {
                 th: "เพิ่มข้อความตอบกลับอัตโนมัติ"
               },
               slug: 'guides/07-adding-custom-replies'
             },
             {
-              label: 'Writing your first custom command',
+              label: 'Writing your First Custom Command',
               translations: {
                 th: "เขียนคำสั่งแรก"
               },
@@ -95,6 +97,35 @@ export default defineConfig({
             },
           ],
         },
+        {
+          label: 'Discord Integration',
+          translations: {
+            th: "มะนาวกับดิสคอร์ด"
+          },
+          items: [
+            {
+            label: 'Getting Started',
+            translations: {
+              th: "มาเริ่มกันเถอะ"
+            },
+            slug: 'discord/00-getting-started'
+            },
+            {
+              label: "Retrieve Discord Credentials",
+              translations: {
+                th: "รับโทเค็นและไอดีไคล์เอนต์ของบอต"
+              },
+              slug: 'discord/01-retrieve-discord-credentials'
+            },
+            {
+              label: "Making the Bot Online",
+              translations: {
+                th: "ทำให้บอตออนไลน์"
+              },
+              slug: 'discord/02-making-the-bot-online'
+            }
+          ]
+        }
       ],
     }),
   ],

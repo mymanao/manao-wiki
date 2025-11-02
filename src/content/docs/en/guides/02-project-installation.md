@@ -1,5 +1,5 @@
 ---
-title: Project installation
+title: Project Installation
 ---
 
 Once you retrieve your application client ID and client secret, you can now download ManaoBot!

@@ -14,7 +14,7 @@ title: ตั้งค่ามะนาว
 ให้ใช้ปุ่มลูกศรเลือกภาษา แล้วกด `Enter` เพื่อยืนยัน
 
 จากนั้นจะมีคำแนะนำแบบทีละขั้นตอน บอกวิธีดึง **Client ID** และ **Client Secret**
-ถ้าเคยอ่าน[คู่มือนี้แล้ว](https://github.com/wrong-lang/manao/wiki/Retrieving-Client-ID-and-Secret-from-Twitch)
+ถ้าเคยอ่าน[คู่มือนี้แล้ว](/th/guides/01-retrieve-client-id-and-secrets-from-twitch)
 สามารถข้ามขั้นตอนนี้ได้โดยพิมพ์ `n` แล้วกด `Enter`
 
 จะมีหน้าคอนเฟิร์มอีกครั้ง ให้กด `Enter` เพื่อข้ามไปต่อได้เลย

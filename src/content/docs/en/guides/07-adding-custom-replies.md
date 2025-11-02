@@ -1,5 +1,5 @@
 ---
-title: Adding custom replies
+title: Adding Custom Replies
 ---
 
 With Manao version 2.2.0, I've introduced the **Custom Replies Manager**, allowing you to automate responses to specific keywords in your Twitch chat. This guide will teach you how to add your custom replies to spice up your Twitch chat!

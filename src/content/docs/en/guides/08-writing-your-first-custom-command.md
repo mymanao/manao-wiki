@@ -1,5 +1,5 @@
 ---
-title: Writing your first custom command
+title: Writing your First Custom Command
 ---
 
 In ManaoWeb Command Manager, you can add your new custom commands! Which may require a lot of programming, but I will guide you through writing your first command. You may need to have a little programming knowledge beforehand. But if you are lazy, copy this entire page into ChatGPT and ask it to do its job.
