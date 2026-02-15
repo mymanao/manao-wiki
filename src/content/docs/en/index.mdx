@@ -1,12 +1,12 @@
 ---
 title: Spice up your streams with Manao
-description: Your all-in-one Twitch chatbot for music, overlays, soundboards, and more.
+description: Your all-in-one Twitch and Kick chatbot for music, overlays, soundboards, and more.
 template: splash
 head:
   - tag: title
     content: Homepage | ManaoBot
 hero:
-  tagline: Your all-in-one Twitch chatbot for music, overlays, soundboards, and more.
+  tagline: Your all-in-one Twitch and Kick chatbot for music, overlays, soundboards, and more.
   image:
     file: https://raw.githubusercontent.com/tinarskii/manao/main/docs/manao.svg
     alt: Manao Logo
@@ -22,6 +22,17 @@ hero:
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
 import "../../../styles/home.css"
+
+<center><h1>🧡 By Streamers, For Streamers 🍋</h1></center>
+
+<div class="sponsor-avatars">
+  <a href="https://twitch.tv/skypowerful" target="_blank">
+    <img src="https://static-cdn.jtvnw.net/jtv_user_pictures/843bc42c-9ddc-466d-bcd2-4d06a67f0610-profile_image-70x70.png" alt="skypowerful" />
+  </a>
+  <a href="https://twitch.tv/tinarskii" target="_blank">
+    <img src="https://static-cdn.jtvnw.net/jtv_user_pictures/e49d1ee1-a99f-41c8-b521-ce90b2651441-profile_image-70x70.jpeg" alt="tinarskii" />
+  </a>
+</div>
 
 ## Why Manao?
 
@@ -51,7 +62,7 @@ import "../../../styles/home.css"
 
 <CardGrid stagger>
   <Card title="Documentation" icon="document">
-    Read the full setup and integration guide in the <a href="/en/00-getting-started">docs section</a>.
+    Read the full setup and integration guide in the <a href="/en/guides/00-getting-started">docs section</a>.
   </Card>
 
   <Card title="Join the Community" icon="discord">

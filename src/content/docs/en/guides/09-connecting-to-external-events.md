@@ -83,7 +83,3 @@ Manao will emit the `session:join` event to the server when a Session ID is pres
 ### Events the server can receive from Manao:
 
 * `event:input`, { message: string, user: string }: The server receives the message typed by the user in Twitch chat along with their username.
-
----
-
-Would you like me to help you draft a specific implementation guide for a server-side listener to go along with this documentation?

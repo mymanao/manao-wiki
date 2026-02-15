@@ -8,7 +8,7 @@ title: ทำให้บอตออนไลน์
 
 ### ไฟล์ .env คืออะไร
 
-ก่อนจะเริ่ม ต้องรู้จักไฟล์ **".env"** ก่อน มันคือไฟล์ที่เก็บข้อมูลสำคัฐ ๆ ทั้งหมดของบอตเรา ไม่ว่าจะเป็นโทเค็น รหัสผ่าน หรือการตั้งค่าต่างๆ ว่าจะเปิดใช้ฟีเจอร์ไหนบ้าง
+ก่อนจะเริ่ม ต้องรู้จักไฟล์ **".env"** ก่อน มันคือไฟล์ที่เก็บข้อมูลสำคัญ ๆ ทั้งหมดของบอตเรา ไม่ว่าจะเป็นโทเค็น รหัสผ่าน หรือการตั้งค่าต่างๆ ว่าจะเปิดใช้ฟีเจอร์ไหนบ้าง
 
 ไฟล์นี้สำคัญมากๆ **ห้ามแชร์ให้ใครเห็นเด็ดขาด** 
 
@@ -20,80 +20,53 @@ title: ทำให้บอตออนไลน์
 
 ทำตามนี้ทีละขั้น ไม่ต้องรีบ
 
-#### 1. เปิดไฟล์ .env
+#### 1. เปิดโฟลเดอร์ ManaoBot
 
-1.  ไปที่โฟลเดอร์ที่เราเก็บไฟล์มะนาวบอตไว้
-2.  จะเห็นไฟล์ชื่อ **".env"** 
-3.  เปิดไฟล์นี้ด้วยโปรแกรมอะไรก็ได้ เช่น Notepad, VS Code, Sublime Text หรืออะไรก็ได้ที่ติดมากับเครื่อง
+เปิดโฟลเดอร์ที่ติดตั้ง ManaoBot ไว้ได้เลย ถ้าไม่รู้ว่าอยู่ที่ไหน ให้กด `⊞ Win` + `R` แล้วพิมพ์ `powershell -NoExit -Command "Set-Location -Path $env:MANAO_PATH"` แล้วกด Enter มันจะพาไปที่โฟลเดอร์นั้นเลย
 
-#### 2. ดูโครงสร้างไฟล์
+#### 2. รันตัวติดตั้งฟีเจอร์เสริม
 
-พอเปิดขึ้นมา ไฟล์จะมีหน้าตาประมาณนี้แหละ (อาจจะมีบางบรรทัดไม่เหมือนกันบ้าง ช่างมัน)
+เมื่อเปิด powershell ขึ้นมาแล้ว ให้พิมพ์คำสั่งนี้แล้วกด Enter:
 
+```powershell
+bun optsetup
 ```
 
-# ========================
+จะขึ้นหน้าตาประมาณนี้
 
-# TWITCH BOT
-
-# ========================
-
-USE_TWITCH=true
-TWITCH_BOT_ACCESS_TOKEN=...
-TWITCH_BOT_REFRESH_TOKEN=...
-
-BROADCASTER_ACCESS_TOKEN=...
-BROADCASTER_REFRESH_TOKEN=...
-
-TWITCH_BOT_ID=...
-BROADCASTER_ID=...
-BROADCASTER_CHANNEL=...
-
-TWITCH_CLIENT_ID=...
-TWITCH_CLIENT_SECRET=...
-
-# ========================
-
-# DISCORD BOT
-
-# ========================
-
-USE_DISCORD=false
-DISCORD_BOT_TOKEN=
-DISCORD_CLIENT_ID=
-SERVER_ID=
-
-NODE_ENV=
-
+```terminaloutput
+⟦◄ ManaoBot v4.0.0 - Configuration ►⟧
+? Do you want to enable Manao Discord Bot? (Y/n)
 ```
 
-#### 3. เปิดการใช้งานบอตดิสคอร์ด
+ให้กด Enter ได้เลย
 
-ตอนนี้บอตมันยังไม่รู้ว่าเราจะใช้บอตดิสคอร์ด ให้เลื่อนลงมาดูตรงส่วน `DISCORD BOT`
+#### 3. ใส่ Bot Token
 
-จะเห็นบรรทัดที่เขียนว่า:
-`USE_DISCORD=false`
+จากนั้นมันจะขึ้นว่า
 
-ให้เปลี่ยนจาก `false` เป็น `true` จะได้เปิดให้มะนาวใช้บอตดิสคอร์ดได้
+```terminaloutput
+⟦◄ ManaoBot v4.0.0 - Configuration ►⟧
+√ Do you want to enable Manao Discord Bot? Yes
+⚠ To enable Discord integration, you need to create a Discord Bot and get its token. Read the guide below:
+→ English: https://manaobot.netlify.app/en/discord/00-getting-started/
+→ Thai: https://manaobot.netlify.app/th/discord/00-getting-started/
+? Enter your Discord Bot Token (Leave blank for unchanged) [input is masked]
+```
 
-#### 4. ใส่โทเค็นของบอต
+ให้เอา **Bot Token** ที่ได้จาก [Discord Developer Portal](https://discord.com/developers/applications) มาใส่ตรงนี้ แล้วกด Enter
+(มันไม่โชว์รหัสที่พิมพ์นะ ไม่ต้องตกใจ กด Enter ได้เลย)
 
-บรรทัดต่อมา `DISCORD_BOT_TOKEN=` จะเป็นตัวกำหนดให้มะนาวรู้ว่าเราจะใช้บอตตัวไหน
+จากนั้นมันจะถามอีกว่า
 
-1.  ให้เราเอา **"Bot Token"** ที่เราก๊อปปี้มาจากหน้า [Discord Developer Portal](https://discord.com/developers/applications) (จากคู่มือที่แล้ว) มาวางใส่ตรงนี้
-2.  ตอนวางเสร็จ มันควรจะมีหน้าตาประมาณนี้:
-    `DISCORD_BOT_TOKEN=AbCdEfG.hIjKlMnOpQrStUvWxYz_THIS_IS_A_FAKE_TOKEN.1234567890`
+```terminaloutput
+? Do you want to enable Manao Kick Bot? (Y/n)
+```
 
-**ย้ำอีกครั้ง** โทเค็นนี้คือรหัสผ่านของบอต ห้ามหลุดไปเด็ดขาด!
+ให้กด n แล้วกด Enter ได้เลย 
 
----
+#### 4. เสร็จแล้วจ้า
 
-### 7. บันทึกไฟล์และรันบอต
-
-พอแก้เสร็จแล้ว กด **Save** ไฟล์ `.env` ให้เรียบร้อย
-
-จากนั้นรันบอทได้โดยเข้าไปที่โฟลเดอร์ ManaoBot เปิดโฟลเดอร์ `tools/windows` แล้วเปิดไฟล์ `START_MANAO.bat`
-
-ถ้าไม่มีอะไรผิดพลาด บอตของเราก็จะออนไลน์ฟรุ้งฟริ้งขึ้นมาใน Discord ทันที
-
-เสร็จแล้ววว เห็นมั้ย ไม่ยากเลย ถ้าบอตไม่ออนไลน์ 99% คือใส่โทเค็นผิด หรือลืมเปลี่ยน `USE_DISCORD` เป็น `true` กลับไปเช็คดูดีๆ
+เท่านี้ก็เสร็จแล้ว รันมะนาวบอตได้เลยจ้า!
+ถ้าไม่ได้ให้เช็ค token อีกรอบว่าใส่ถูกต้องหรือเปล่า 
+หรือถ้ายังมีปัญหาอยู่ก็เข้ามาถามใน [Discord](https://discord.gg/vkW7YMyYaf) ได้เลยนะ

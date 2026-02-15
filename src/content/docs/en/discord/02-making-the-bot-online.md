@@ -2,98 +2,85 @@
 title: Making the Bot Online
 ---
 
-This page is super easy. Even a kindergartener can do it. Seriously, you just need to edit a small config file.
+This page isn’t hard at all. Even a kindergartener can do it. Seriously. You just need to tweak the config file a little.
 
 ---
 
 ### What is the .env file?
 
-Before we start, you need to know about the **".env"** file. This file stores all the important data for our bot, like tokens, passwords, and various settings for which features to enable.
+Before we start, you need to know what the **".env"** file is.
 
-This file is extremely important. **NEVER share it with anyone!**
+It’s the file that stores all the important information for your bot — tokens, passwords, and various settings like which features you want to enable.
 
-This file is automatically created for you when you run the installer and setup. If you don't have it, run the installer again (open the ManaoBot folder, go to the `tools/windows` folder, and run `INSTALLER.bat`).
+This file is extremely important. **Never share it with anyone.**
+
+It will be created automatically when you run the installer and complete the setup. If it’s missing, just run the installer again (open your ManaoBot folder, go to the `tools/windows` folder, and open the `INSTALLER.bat` file).
 
 ---
 
 ### Setup Steps
 
-Follow this one step at a time. No need to rush.
+Follow these steps one by one. No need to rush.
 
-#### 1. Open the .env file
+#### 1. Open the ManaoBot folder
 
-1.  Go to the folder where you keep your ManaoBot files.
-2.  You will see a file named **".env"**.
-3.  Open this file with any program you like, such as Notepad, VS Code, Sublime Text, or whatever came with your computer.
+Open the folder where you installed ManaoBot.
 
-#### 2. Look at the file structure
-
-Once you open it, the file will look something like this (some lines might be different, don't worry about it):
+If you don’t know where it is, press `⊞ Win` + `R`, then type:
 
 ```
 
-# ========================
+powershell -NoExit -Command "Set-Location -Path $env:MANAO_PATH"
 
-# TWITCH BOT
+````
 
-# ========================
+Press Enter, and it will take you straight to that folder.
 
-USE_TWITCH=true
-TWITCH_BOT_ACCESS_TOKEN=...
-TWITCH_BOT_REFRESH_TOKEN=...
+#### 2. Run the optional feature setup
 
-BROADCASTER_ACCESS_TOKEN=...
-BROADCASTER_REFRESH_TOKEN=...
+Once PowerShell is open, type this command and press Enter:
 
-TWITCH_BOT_ID=...
-BROADCASTER_ID=...
-BROADCASTER_CHANNEL=...
+```powershell
+bun optsetup
+````
 
-TWITCH_CLIENT_ID=...
-TWITCH_CLIENT_SECRET=...
+You’ll see something like this:
 
-# ========================
-
-# DISCORD BOT
-
-# ========================
-
-USE_DISCORD=false
-DISCORD_BOT_TOKEN=
-DISCORD_CLIENT_ID=
-SERVER_ID=
-
-NODE_ENV=
-
+```terminaloutput
+⟦◄ ManaoBot v4.0.0 - Configuration ►⟧
+? Do you want to enable Manao Discord Bot? (Y/n)
 ```
 
-#### 3. Enable the Discord Bot
+Just press Enter.
 
-Right now, the bot doesn't know you want to use the Discord bot. Scroll down to the `DISCORD BOT` section.
+#### 3. Enter the Bot Token
 
-You'll see a line that says:
-`USE_DISCORD=false`
+Then it will show:
 
-Change `false` to `true`. This will let ManaoBot know it can use the Discord bot.
+```terminaloutput
+⟦◄ ManaoBot v4.0.0 - Configuration ►⟧
+√ Do you want to enable Manao Discord Bot? Yes
+⚠ To enable Discord integration, you need to create a Discord Bot and get its token. Read the guide below:
+→ English: https://manaobot.netlify.app/en/discord/00-getting-started/
+→ Thai: https://manaobot.netlify.app/th/discord/00-getting-started/
+? Enter your Discord Bot Token (Leave blank for unchanged) [input is masked]
+```
 
-#### 4. Add the Bot Token
+Take the **Bot Token** you got from the [Discord Developer Portal](https://discord.com/developers/applications) and paste it here, then press Enter.
 
-The next line, `DISCORD_BOT_TOKEN=`, tells ManaoBot which bot to use.
+(It won’t show the token while you type. Don’t panic. Just press Enter.)
 
-1.  Take the **"Bot Token"** you copied from the [Discord Developer Portal](https://discord.com/developers/applications) (from the previous guide) and paste it here.
-2.  When you're done, it should look something like this:
-    `DISCORD_BOT_TOKEN=AbCdEfG.hIjKlMnOpQrStUvWxYz_THIS_IS_A_FAKE_TOKEN.1234567890`
+After that, it will ask:
 
-**I'll say it again:** This token is your bot's password. Do not let it leak out!
+```terminaloutput
+? Do you want to enable Manao Kick Bot? (Y/n)
+```
 
----
+Type `n` and press Enter.
 
-### 7. Save the file and run the bot
+#### 4. All done 🎉
 
-Once you're done editing, **Save** the `.env` file.
+That’s it. You’re done. You can run ManaoBot now!
 
-Now you can run the bot by going to the ManaoBot folder, opening the `tools/windows` folder, and running `START_MANAO.bat`.
-
-If nothing went wrong, your bot will pop online in Discord immediately.
-
-All done! See? Not hard at all. If the bot doesn't come online, 99% of the time it's because you pasted the wrong token or forgot to change `USE_DISCORD` to `true`. Go back and double-check!
+If it doesn’t work, double-check that your token is correct.
+If you’re still having issues, feel free to ask in [Discord](https://discord.gg/vkW7YMyYaf).

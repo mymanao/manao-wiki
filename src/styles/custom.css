@@ -5,3 +5,32 @@
 .sidebar, .header, h1, h2, nav {
   font-family: 'Mitr', sans-serif;
 }
+
+.sponsor-avatars {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.sponsor-avatars img {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--sl-color-bg);
+  transition: transform 0.2s ease;
+}
+
+.sponsor-avatars img:first-child {
+  margin-left: 0;
+}
+
+.sponsor-avatars img:hover {
+  transform: translateY(-4px);
+  z-index: 10;
+}
+
+.sponsor-avatars img {
+  box-shadow: 0 0 0 2px var(--sl-color-accent);
+}

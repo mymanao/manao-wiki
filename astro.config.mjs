@@ -136,6 +136,35 @@ export default defineConfig({
               slug: 'discord/02-making-the-bot-online'
             }
           ]
+        },
+        {
+          label: 'Kick Integration',
+          translations: {
+            th: "มะนาวกับ Kick"
+          },
+          items: [
+            {
+              label: 'Getting Started',
+              translations: {
+                th: "มาเริ่มกันเถอะ"
+              },
+              slug: 'kick/00-getting-started'
+            },
+            {
+              label: "Retrieve Kick Credentials",
+              translations: {
+                th: "รับข้อมูลของบอต"
+              },
+              slug: 'kick/01-retrieve-kick-credentials'
+            },
+            {
+              label: "Setup Ngrok",
+              translations: {
+                th: "ตั้งค่า Ngrok"
+              },
+              slug: 'kick/02-setup-ngrok'
+            }
+          ]
         }
       ],
     }),
