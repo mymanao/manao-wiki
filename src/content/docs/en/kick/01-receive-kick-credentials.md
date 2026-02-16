@@ -1,5 +1,5 @@
 ---
-title: Retrieve Kick Credentials
+title: Receive Kick Credentials
 ---
 
 Before your bot can start chatting, it needs a way to log in. Kick requires bots to use something called a **Client ID** and **Client Secret** to request permission to connect.

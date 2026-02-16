@@ -48,7 +48,7 @@ export default defineConfig({
               translations: {
                 th: "รับไคล์แอนต์ไอดีและซีเครทจากทวิช"
               },
-              slug: 'guides/01-retrieve-client-id-and-secrets-from-twitch'
+              slug: 'guides/01-receive-client-id-and-secrets-from-twitch'
             },
             {
               label: 'Project Installation',
@@ -122,11 +122,11 @@ export default defineConfig({
             slug: 'discord/00-getting-started'
             },
             {
-              label: "Retrieve Discord Credentials",
+              label: "Receive Discord Credentials",
               translations: {
                 th: "รับโทเค็นและไอดีไคล์เอนต์ของบอต"
               },
-              slug: 'discord/01-retrieve-discord-credentials'
+              slug: 'discord/01-receive-discord-credentials'
             },
             {
               label: "Making the Bot Online",
@@ -151,11 +151,11 @@ export default defineConfig({
               slug: 'kick/00-getting-started'
             },
             {
-              label: "Retrieve Kick Credentials",
+              label: "Receive Kick Credentials",
               translations: {
                 th: "รับข้อมูลของบอต"
               },
-              slug: 'kick/01-retrieve-kick-credentials'
+              slug: 'kick/01-receive-kick-credentials'
             },
             {
               label: "Setup Ngrok",

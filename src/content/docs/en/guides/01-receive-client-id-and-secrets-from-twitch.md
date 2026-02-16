@@ -1,9 +1,9 @@
 ---
-title: Retrieving Client ID and Secret from Twitch
+title: Receiving Client ID and Secret from Twitch
 ---
 
 Before you can interact with chat in Twitch, you need to login to your Twitch account first. The same goes for ManaoBot. If the user has username and password, ManaoBot has client id and client secret.
-Here is step-by-step guide on how to retrieve your client id and secret.
+Here is a step-by-step guide on how to retrieve your client id and secret.
 
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: Retrieve Discord Credentials
+title: Receive Discord Credentials
 ---
 
 Before a bot can join a server and start chatting, it needs a way to log in. Discord bots use something called a **Bot Token** to log in and operate.
