@@ -1,0 +1,83 @@
+---
+title: เริ่มต้นใช้งาน KickIt
+description: ติดตั้งและตั้งค่า KickIt framework สำหรับสร้างบอต Kick.com
+---
+
+**KickIt** คือ command framework น้ำหนักเบาสำหรับสร้างบอต Kick.com โดยสร้างอยู่บน `@manaobot/kick` SDK
+ออกแบบมาเพื่อให้ใช้งานง่าย รองรับ Bun และเน้น Developer Experience เป็นหลัก
+
+## สิ่งที่ต้องมีก่อน
+
+- [Bun](https://bun.sh) เวอร์ชัน 1.0 ขึ้นไป
+- บัญชี Kick.com พร้อม OAuth credentials (Client ID, Client Secret, Access Token, Refresh Token)
+- (ถ้าพัฒนาในเครื่องตัวเอง) บัญชี [ngrok](https://ngrok.com) สำหรับรับ webhook
+
+## การติดตั้ง
+
+### 1. ติดตั้ง KickIt
+
+```bash
+bun add @manaobot/kickit
+```
+
+### 2. ติดตั้ง ngrok (ถ้าต้องการพัฒนาในเครื่องตัวเอง)
+
+```bash
+bun add @ngrok/ngrok
+```
+
+### 3. สร้างไฟล์ `.env`
+
+```env
+KICK_CLIENT_ID=your_client_id
+KICK_CLIENT_SECRET=your_client_secret
+KICK_ACCESS_TOKEN=your_access_token
+KICK_REFRESH_TOKEN=your_refresh_token
+KICK_EXPIRES_AT=0
+NGROK_AUTHTOKEN=your_ngrok_token
+```
+
+### 4. สร้างไฟล์ `index.ts`
+
+```ts
+import { KickIt } from "@manaobot/kickit";
+
+const bot = new KickIt({
+  prefix: "!",
+  auth: {
+    clientId: Bun.env.KICK_CLIENT_ID!,
+    clientSecret: Bun.env.KICK_CLIENT_SECRET!,
+    accessToken: Bun.env.KICK_ACCESS_TOKEN!,
+    refreshToken: Bun.env.KICK_REFRESH_TOKEN!,
+    expiresAt: parseInt(Bun.env.KICK_EXPIRES_AT!, 10) || Date.now(),
+    scopes: ["chat:write", "events:subscribe", "moderation:ban", "channel:read"],
+  },
+  ngrok: {
+    authtoken: Bun.env.NGROK_AUTHTOKEN,
+    domain: "your-domain.ngrok-free.app",
+    port: 5000,
+    path: "/kick/webhook",
+  },
+});
+
+bot.command("ping", async (ctx) => {
+  await ctx.reply("pong 🏓");
+});
+
+await bot.start();
+```
+
+### 5. รันบอต
+
+```bash
+bun run index.ts
+```
+
+:::tip
+  ถ้าคุณ deploy บอตบน server จริงที่มี public URL อยู่แล้ว ไม่จำเป็นต้องติดตั้ง ngrok ก็ได้ ตัด config `ngrok` ออกได้เลย
+:::
+
+## ขั้นตอนถัดไป
+
+- ดู [การสร้างคำสั่ง](/th/kickit/01-commands) เพื่อเรียนรู้วิธีเพิ่มคำสั่งให้บอต
+- ดู [Context API](/th/kickit/02-context) เพื่อเข้าใจวิธีตอบสนองต่อข้อความใน Kick chat

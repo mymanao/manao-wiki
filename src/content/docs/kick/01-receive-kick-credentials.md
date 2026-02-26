@@ -66,7 +66,7 @@ bun optsetup
 ```terminaloutput
 ⚠ To enable Kick integration, you need to create a Kick Application and get its Client ID and Client Secret. Read the guide below:
 → English: https://manaobot.netlify.app/en/kick/00-getting-started/
-→ Thai: https://manaobot.netlify.app/th/kick/00-getting-started/
+→ Thai: https://manaobot.netlify./kick/00-getting-started/
 ? Enter your Kick Client ID (Leave blank for unchanged)
 ```
 

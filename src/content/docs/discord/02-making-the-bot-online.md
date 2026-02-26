@@ -50,7 +50,7 @@ bun optsetup
 √ Do you want to enable Manao Discord Bot? Yes
 ⚠ To enable Discord integration, you need to create a Discord Bot and get its token. Read the guide below:
 → English: https://manaobot.netlify.app/en/discord/00-getting-started/
-→ Thai: https://manaobot.netlify.app/th/discord/00-getting-started/
+→ Thai: https://manaobot.netlify.app/discord/00-getting-started/
 ? Enter your Discord Bot Token (Leave blank for unchanged) [input is masked]
 ```
 

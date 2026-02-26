@@ -1,22 +1,26 @@
 // @ts-check
 import {defineConfig} from 'astro/config';
 import starlight from '@astrojs/starlight';
+import starlightLlmsTxt from "starlight-llms-txt";
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://manaobot.netlify.app/",
   integrations: [
     starlight({
       title: 'Manao',
+      plugins: [starlightLlmsTxt()],
       logo: {
         src: "./public/favicon.svg",
         replacesTitle: true,
       },
-      defaultLocale: 'th',
+      defaultLocale: 'root',
       locales: {
         en: {
           label: 'English',
         },
-        th: {
+        root: {
+          lang: "th",
           label: 'ภาษาไทย',
         },
       },
@@ -174,6 +178,24 @@ export default defineConfig({
             },
           ]
         },
+        //
+        // {
+        //   label: 'Developer Guide',
+        //   translations: { th: "คู่มือสำหรับนักพัฒนา" },
+        //   items: [
+        //     {
+        //       label: '@manaobot/kickit',
+        //       translations: { th: "@manaobot/kickit" },
+        //       items: [
+        //         {
+        //           label: 'Getting Started',
+        //           translations: { th: "มาเริ่มกันเถอะ" },
+        //           slug: 'dev/kickit/00-getting-started'
+        //         }
+        //       ]
+        //     },
+        //   ]
+        // }
       ],
     }),
   ],
