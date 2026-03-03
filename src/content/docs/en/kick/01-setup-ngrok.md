@@ -22,7 +22,7 @@ Alright, enough theories. Let’s get started.
 
 ---
 
-## 1. Sign Up and Install ngrok
+##  Sign Up and Install ngrok
 
 ### Create an Account
 
@@ -40,7 +40,7 @@ This is your `NGROK_AUTHTOKEN`.
 
 ---
 
-## 2. Get Your ngrok Domain
+##  Get Your ngrok Domain
 
 Go to the ngrok **[Dashboard](https://dashboard.ngrok.com/)**  
 Then open the **[Domains](https://dashboard.ngrok.com/domains)** menu.
@@ -56,7 +56,7 @@ This is your `NGROK_DOMAIN`.
 
 ---
 
-## 3. Add Values to the .env File
+##  Add Values to the .env File
 
 Now you have two things:
 
@@ -78,7 +78,7 @@ Save the file.
 
 ---
 
-## 4. Update the Webhook URL in Kick
+##  Update the Webhook URL in Kick
 
 Remember when we first created the app, we set:
 

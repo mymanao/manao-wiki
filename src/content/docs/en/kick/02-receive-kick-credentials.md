@@ -14,7 +14,7 @@ Alright, enough introduction. Let’s get started.
 
 ---
 
-### 1. Create an Application
+###  Create an Application
 
 Manao is an application on Kick, so we need to create one first. Follow these steps:
 
@@ -38,7 +38,7 @@ Copy your **Client ID** and **Client Secret** and keep them safe — you’ll ne
 
 ---
 
-### 2. Configure the Bot in Manao
+###  Configure the Bot in Manao
 
 Press `⊞ Win` + `R`, then type:
 

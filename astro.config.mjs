@@ -142,14 +142,14 @@ export default defineConfig({
                   slug: 'kick/00-getting-started'
                 },
                 {
-                  label: 'Receive Kick Credentials',
-                  translations: { th: "รับข้อมูลของบอต" },
-                  slug: 'kick/01-receive-kick-credentials'
-                },
-                {
                   label: 'Setup Ngrok',
                   translations: { th: "ตั้งค่า Ngrok" },
-                  slug: 'kick/02-setup-ngrok'
+                  slug: 'kick/01-setup-ngrok'
+                },
+                {
+                  label: 'Receive Kick Credentials',
+                  translations: { th: "รับข้อมูลของบอต" },
+                  slug: 'kick/02-receive-kick-credentials'
                 },
               ]
             },

@@ -1,45 +1,65 @@
 ---
-title: Setting up Manao
+title: Configure Manao
 ---
 
-Setting up Manao is a simple process. This continues from the previous guide where we run the setup script in the last process of installation. This script will manage your Twitch credentials, along with managing hard process into an easy login screen.
+Setting up **Manao** is easier than peeling a banana. A slightly spiky banana, maybe — but still easy 🙂
 
-
-***
-
-### 1. Setting up Client ID and Secret
-
-At first, you will be prompt for language (English/Thai). Use your arrow keys to select and press `Enter` to confirm.
-
-Then, a step-by-step guide will be shown on how to retrieve client id and secrets. If you have read [this guide](/en/guides/01-retrieve-client-id-and-secrets-from-twitch) you may skip this by typing `n` and press `Enter`.
-
-Another confirmation prompt will be shown, press `Enter` again to skip.
-
-Next, you will be asked for Twitch Client ID, paste your Client ID in the terminal then press `Enter`, the same process also goes for Client Secret.
+This section continues from the previous guide, after running the installation script at the final step.  
+The script helps manage your Client ID and Client Secret, turning a complex process into a simple login flow.
 
 ---
 
-### 2. Logging in to Twitch
+### Configure Client ID and Client Secret
 
-The following message:
+First, the system will ask which language you want to use (English/Thai).  
+Use the arrow keys to select a language, then press `Enter` to confirm.
+
+Next, you’ll see step-by-step instructions explaining how to obtain your **Client ID** and **Client Secret**.
+
+If you’ve already read [this guide](/guides/01-retrieve-client-id-and-secrets-from-twitch),  
+you can skip this part by typing `n` and pressing `Enter`.
+
+There will be another confirmation screen — just press `Enter` to continue.
+
+Then, the system will ask for your **Twitch Client ID**.  
+Paste your Client ID into the terminal and press `Enter`.
+
+After that, do the same for your **Client Secret**.
+
+---
+
+### Log in to Twitch
+
+When you see the message:
+
 `To continue, please login to your BOT Twitch account (the secondary account for the bot)`
-indicates that Client ID and Secret you entered are correct.
 
-If you have an account for the bot (can be any account), please switch to that account in the browser before pressing `Enter`. If you don't have one, you can use your broadcaster account to continue without having to logout.
+It means your Client ID and Client Secret were entered correctly.
 
-Then, this message:
-`To continue, please login to your BROADCASTER Twitch account (the primary account for streaming)` will be shown if you finished authorizing bot account.
+If you already have a separate account for the bot (it can be any account),  
+switch to that account in your browser before pressing `Enter`.
 
-Switch to your broadcaster account (or do nothing if you don't have bot account), then press `Enter` to authorize the application again.
+If you don’t have a separate bot account yet,  
+you can temporarily use your main broadcaster account without logging out.
+
+After authorizing the bot account, you’ll see another message:
+
+`To continue, please login to your BROADCASTER Twitch account (the primary account for streaming)`
+
+Switch back to your main broadcaster account.  
+If you're using the same account for both bot and broadcaster, you don’t need to do anything — just press `Enter` to authorize again.
 
 ---
 
-### 3. Completing the Setup Process
+### Final Step of Installation
 
-After the setup process is finished, you will see something like this:
+Once the entire setup process is complete,  
+you should see something like this:
 
 ![](https://github.com/user-attachments/assets/ec8055fd-2b1a-4776-9fd6-0b9a67d6349c)
 
-This indicates that the setup process is complete! You can now run Manao by searching "Manao Twitch Bot" in your Start Menu.
+You’re all set! 🎉
+
+You can now run Manao by searching for **"Manao Twitch Bot"** in the Start menu, as shown below:
 
 ![](https://i.ibb.co/WWrF5NSk/Screenshot-2025-11-11-035107.png)

@@ -15,9 +15,9 @@ title: ตั้งค่า Ngrok
 
 ---
 
-## 1. สมัครและติดตั้ง ngrok
+### สมัครและติดตั้ง ngrok
 
-### สมัครบัญชี
+#### สมัครบัญชี
 
 1. ไปที่ https://ngrok.com/
 2. สมัครบัญชีให้เรียบร้อย
@@ -31,7 +31,7 @@ title: ตั้งค่า Ngrok
 
 ---
 
-## 2. สร้างโดเมน ngrok
+### สร้างโดเมน ngrok
 
 เข้าไปที่ [Dashboard](https://dashboard.ngrok.com/) ของ ngrok
 ไปที่เมนู **[Domains](https://dashboard.ngrok.com/domains)**
@@ -45,26 +45,7 @@ title: ตั้งค่า Ngrok
 
 ---
 
-## 3. ใส่ค่าในไฟล์ .env
-
-ตอนนี้เรามี 2 อย่างแล้ว:
-
-* ngrok domain
-* ngrok authtoken
-
-เปิดไฟล์ `.env` ในโฟลเดอร์ ManaoBot
-แล้วให้แก้ `NGROK_DOMAIN` กับ `NGROK_AUTHTOKEN` ให้เป็นค่าที่เราได้มา
-
-```
-NGROK_DOMAIN=yourname.ngrok.app
-NGROK_AUTHTOKEN=your_real_authtoken_here
-```
-
-เซฟไฟล์ได้เลยนะ
-
----
-
-## 4. แก้ Webhook URL ใน Kick
+### แก้ Webhook URL ใน Kick
 
 จำได้ไหม ตอนสร้างแอพเราใส่
 
@@ -82,4 +63,4 @@ https://[โดเมนที่ได้มา]/kick/webhook
 
 ---
 
-ถ้าทำตามถูกต้องทั้งหมด บอตก็พร้อมรันแล้วจ้า
+ใกล้เสร็จแล้วคับ อ่านคู่มือต่อไปได้เลยคับ!!!!  

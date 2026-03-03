@@ -15,7 +15,7 @@ title: รับข้อมูลของบอต
 
 ---
 
-### 1. สร้างแอพพลิเคชัน
+### สร้างแอพพลิเคชัน
 
 มะนาวคือแอพพลิเคชั่นหนึ่งของ Kick ซึ่งเราต้องสร้างแอพฯ ขึ้นมาก่อน ทำตามนี้เลย
 
@@ -39,28 +39,31 @@ title: รับข้อมูลของบอต
 
 ---
 
-### 2. ตั้งค่าบอตใน Manao
+### ตั้งค่าบอตใน Manao
 
-ให้กด `⊞ Win` + `R` แล้วพิมพ์ `powershell -NoExit -Command "Set-Location -Path $env:MANAO_PATH"` แล้วกด Enter
-จะมีหน้าต่าง PowerShell เด้งขึ้นมา ให้พิมพ์คำสั่งนี้แล้วกด Enter:
-```powershell
-bun optsetup
-```
+**Windows**: ให้รันตัว `ManaoBotSetup.exe` อีกรอบ กด "Next" ไปเรื่อย ๆ จนเสร็จแล้วติ๊กถูก "Run powershell.exe" แล้วกด "Finish" ได้เลย
 
-จะขึ้นหน้าตาประมาณนี้
+**MacOS/Linux**: เปิด folder ที่ติดตั้ง ManaoBot แล้วรัน `bun setup` 
+
+ได้แล้วจะขึ้นหน้าตาประมาณนี้
 ```terminaloutput
-⟦◄ ManaoBot v4.0.0 - Configuration ►⟧
-? Do you want to enable Manao Discord Bot? (Y/n)
+⟦◄ ManaoBot v4.1.1 - Configuration ►⟧
+✔ Do you want to enable Manao Twitch Bot?
 ```
 
-ให้กด n แล้วกด Enter ได้เลย
+ให้กด Enter ไปเรื่อย ๆ (ยกเว้นถ้าไม่อยากใช้บอต Twitch ให้พิมพ์ "n" แล้วกด Enter) จนกว่าจะเจอคำถามนี้
 
-จากนั้นมันจะถามว่า
 ```terminaloutput
-? Do you want to enable Manao Kick Bot? (Y/n)
+? Do you want to enable Manao Discord Bot? (Y/n) 
 ```
 
-ให้กด Enter ได้เลย
+ถ้ายังไม่เคยใช้ / ไม่ได้ใช้บอต Discord ให้พิมพ์ "n" แล้วกด Enter ไปเลย แต่ถ้าอยากใช้ก็พิมพ์ "Y" แล้วกด Enter เรื่อย ๆ จนกว่าจะเจอคำถามนี้
+
+```terminaloutput
+? Do you want to enable Manao Kick Bot? (Y/n) 
+```
+
+อันนี้ให้พิมพ์ "Y" แล้วกด Enter ไปเลยยยย
 
 จากนั้นมันจะขึ้นข้อความนี้
 ```terminaloutput
@@ -80,7 +83,13 @@ bun optsetup
 ให้เอา **Client Secret** ที่ได้จากหน้าแอพพลิเคชั่นของ Kick มาใส่ตรงนี้ แล้วกด Enter (มันจะไม่โชว์รหัสที่พิมพ์นะ ไม่ต้องตกใจ กด Enter ได้เลย)
 
 หลังจากนั้น มะนาวจะพาเราไปที่หน้าเว็บของ Kick เพื่อขออนุญาตให้บอตของเราสามารถเชื่อมต่อกับ Kick ได้ ให้กด "Authorize" ได้เลย
-ถ้ามันเสร็จแล้ว จะขึ้นว่า
+ถ้ามันเสร็จแล้ว จะขึ้นถามต่ออีกว่า
+
+```terminaloutput
+? Do you want to configure Ngrok? (used for Kick event webhooks) (Y/n) 
+```
+
+ให้กด Enter แล้วใส่ Authtoken กับ domain ของ ngrok ที่เราได้มาจากขั้นตอนการตั้งค่า ngrok ได้เลย [อ่านเพิ่มเติม](/kick/01-setup-ngrok)
 
 ```terminaloutput
 Authorization successful.

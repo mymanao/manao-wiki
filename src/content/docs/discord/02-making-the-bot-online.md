@@ -1,72 +1,87 @@
 ---
-title: ทำให้บอตออนไลน์
+title: รับโทเค็นและไอดีไคล์เอนต์จาก Discord
 ---
 
-หน้านี้ไม่ยากเลย เด็กอนุบาลก็ทำได้ จริงๆ นะ แค่ไปแก้ไฟล์ตั้งค่านิดหน่อย
+ก่อนที่บอตจะเข้าร่วมเซิร์ฟเวอร์และเริ่มแชทได้ มันต้องมีช่องทางในการล็อกอินก่อน บอต Discord เนี่ยใช้สิ่งที่เรียกว่า **Bot Token** ในการล็อกอินและทำงาน ซึ่งต่างจาก Twitch หรือ Kick ตรงที่ไม่ต้องยุ่งกับ OAuth หรือ Scope ให้ปวดหัว แค่สร้างบอต คัดลอก Token แล้วเอาไปใส่ในสคริปต์ตั้งค่าได้เลย
 
----
-
-### ไฟล์ .env คืออะไร
-
-ก่อนจะเริ่ม ต้องรู้จักไฟล์ **".env"** ก่อน มันคือไฟล์ที่เก็บข้อมูลสำคัญ ๆ ทั้งหมดของบอตเรา ไม่ว่าจะเป็นโทเค็น รหัสผ่าน หรือการตั้งค่าต่างๆ ว่าจะเปิดใช้ฟีเจอร์ไหนบ้าง
-
-ไฟล์นี้สำคัญมากๆ **ห้ามแชร์ให้ใครเห็นเด็ดขาด** 
-
-โดยไฟล์นี้จะถูกสร้างให้โดยอัตโนมัติตอนรันตัวติดตั้งตามด้วยเซ็ตอัพ ถ้าไม่มีให้รันตัวติดตั้งใหม่อีกรอบ (เปิดโฟลเดอร์ ManaoBot แล้วไปที่โฟลเดอร์ `tools/windows` แล้วเปิดไฟล์ `INSTALLER.bat`)
+โอเค เกริ่นมาเยอะแล้ว มาเริ่มกันเลยดีกว่า!
 
 ---
 
-### ขั้นตอนการตั้งค่า
+### สร้างแอพพลิเคชัน
 
-ทำตามนี้ทีละขั้น ไม่ต้องรีบ
+ก่อนที่เราจะมีบอต เราต้องสร้างแอพพลิเคชันใน Discord ก่อน ทำตามนี้เลย
 
-#### 1. เปิดโฟลเดอร์ ManaoBot
+1. ล็อกอินเข้า [Discord Developer Portal](https://discord.com/developers/applications)
+2. คลิกปุ่ม **"New Application"** ที่มุมขวาบน
+3. ตั้งชื่ออะไรก็ได้ (ชื่อนี้ไม่ใช่ชื่อบอตที่โชว์ในเซิร์ฟเวอร์นะ เป็นแค่ชื่อแอพพลิเคชัน)
+4. กด **"Create"** เสร็จแล้วจ้า
 
-เปิดโฟลเดอร์ที่ติดตั้ง ManaoBot ไว้ได้เลย ถ้าไม่รู้ว่าอยู่ที่ไหน ให้กด `⊞ Win` + `R` แล้วพิมพ์ `powershell -NoExit -Command "Set-Location -Path $env:MANAO_PATH"` แล้วกด Enter มันจะพาไปที่โฟลเดอร์นั้นเลย
+:::caution
+บัญชีที่ใช้สร้างแอพพลิเคชันต้องเปิดการยืนยันสองขั้นตอน (2FA) ก่อนนะ ถ้าไม่รู้ว่าเปิดยังไง อ่าน [การใช้แอป Authenticator บน Discord](https://support.discord.com/hc/th/articles/26304482627095)
+:::
 
-#### 2. รันตัวติดตั้งฟีเจอร์เสริม
+---
 
-เมื่อเปิด powershell ขึ้นมาแล้ว ให้พิมพ์คำสั่งนี้แล้วกด Enter:
+### รับ Bot Token
 
-```powershell
-bun optsetup
+มาถึงส่วนสำคัญแล้ว ทำตามนี้เลย
+
+1. ในเมนูด้านซ้าย คลิกแท็บ **"Bot"**
+2. กดปุ่ม **"Reset Token"**
+3. กรอกรหัส 2FA ถ้ามีหน้าต่างเด้งขึ้นมา
+4. จะมีข้อความยาว ๆ ปรากฏขึ้น — นั่นคือ **Bot Token**
+5. กด **"Copy"** แล้วเก็บไว้ในที่ปลอดภัยทันที เพราะออกจากหน้านี้แล้วจะดูไม่ได้อีก ถ้าหายต้อง Reset ใหม่
+
+:::danger
+**ย้ำอีกครั้ง!** Bot Token คือรหัสลับของบอต ห้ามแชร์ให้ใครเด็ดขาด ห้ามโพสต์ใน GitHub หรือที่สาธารณะใด ๆ ทั้งนั้น ใครได้ไปสามารถควบคุมบอตเราได้ 100%
+:::
+
+---
+
+### เชิญบอตเข้าเซิร์ฟเวอร์
+
+บอตพร้อมแล้ว แต่ยังไม่มีที่ไป ต้องเชิญเข้าเซิร์ฟเวอร์ก่อน ทำตามนี้เลย
+
+1. ในเมนูด้านซ้าย คลิก **"OAuth2"** แล้วเลือก **"URL Generator"**
+2. ในส่วน **Scopes** ให้ติ๊ก **`bot`**
+3. ในส่วน **Bot Permissions** ที่โผล่มาด้านล่าง ให้ติ๊ก **`Administrator`**
+4. คัดลอก URL ที่สร้างขึ้นด้านล่างสุด
+5. เปิด URL นั้นในเบราว์เซอร์ เลือกเซิร์ฟเวอร์ที่ต้องการ แล้วกด **"Authorize"**
+
+---
+
+### ตั้งค่าบอตใน Manao
+
+**Windows**: ให้รันตัว `ManaoBotSetup.exe` อีกรอบ กด "Next" ไปเรื่อย ๆ จนเสร็จแล้วติ๊กถูก "Run powershell.exe" แล้วกด "Finish" ได้เลย
+
+**MacOS/Linux**: เปิด folder ที่ติดตั้ง ManaoBot แล้วรัน `bun setup`
+
+ได้แล้วจะขึ้นหน้าตาประมาณนี้
+```terminaloutput
+⟦◄ ManaoBot v4.1.0 - Configuration ►⟧
+? Do you want to enable Manao Twitch Bot? (Y/n)
 ```
 
-จะขึ้นหน้าตาประมาณนี้
+ให้กด Enter ไปเรื่อย ๆ จนกว่าจะเจอคำถามนี้
 
 ```terminaloutput
-⟦◄ ManaoBot v4.0.0 - Configuration ►⟧
 ? Do you want to enable Manao Discord Bot? (Y/n)
 ```
 
-ให้กด Enter ได้เลย
-
-#### 3. ใส่ Bot Token
-
-จากนั้นมันจะขึ้นว่า
-
+กด Enter จากนั้นจะขึ้นข้อความนี้
 ```terminaloutput
-⟦◄ ManaoBot v4.0.0 - Configuration ►⟧
-√ Do you want to enable Manao Discord Bot? Yes
 ⚠ To enable Discord integration, you need to create a Discord Bot and get its token. Read the guide below:
 → English: https://manaobot.netlify.app/en/discord/00-getting-started/
-→ Thai: https://manaobot.netlify.app/discord/00-getting-started/
+→ Thai: https://manaobot.netlify.app/th/discord/00-getting-started/
 ? Enter your Discord Bot Token (Leave blank for unchanged) [input is masked]
 ```
 
-ให้เอา **Bot Token** ที่ได้จาก [Discord Developer Portal](https://discord.com/developers/applications) มาใส่ตรงนี้ แล้วกด Enter
-(มันไม่โชว์รหัสที่พิมพ์นะ ไม่ต้องตกใจ กด Enter ได้เลย)
+ให้เอา **Bot Token** ที่ได้มาใส่ตรงนี้ แล้วกด Enter (มันไม่โชว์รหัสที่พิมพ์นะ ไม่ต้องตกใจ กด Enter ได้เลย)
 
-จากนั้นมันจะถามอีกว่า
-
+จากนั้นตอบคำถามที่เหลือตามต้องการ ถ้าไม่รู้คืออะไร / ไม่อยากใช้ พิมพ์ n แล้ว Enter ให้หมด เมื่อเสร็จแล้วจะขึ้นว่า
 ```terminaloutput
-? Do you want to enable Manao Kick Bot? (Y/n)
+✅ Configuration complete! Your .env file has been created.
 ```
 
-ให้กด n แล้วกด Enter ได้เลย 
-
-#### 4. เสร็จแล้วจ้า
-
-เท่านี้ก็เสร็จแล้ว รันมะนาวบอตได้เลยจ้า!
-ถ้าไม่ได้ให้เช็ค token อีกรอบว่าใส่ถูกต้องหรือเปล่า 
-หรือถ้ายังมีปัญหาอยู่ก็เข้ามาถามใน [Discord](https://discord.gg/vkW7YMyYaf) ได้เลยนะ
+แค่นี้ก็เรียบร้อยแล้วจ้า! รันมะนาวบอตได้เลย

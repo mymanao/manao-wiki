@@ -6,13 +6,13 @@ Once you have configured and started ManaoBot, you can now add various overlays 
 
 ---
 
-### 1. Open OBS/Streamlabs
+###  Open OBS/Streamlabs
 
 Open **OBS Studio/Streamlabs** and go to the scene you want to add your overlay to. You can also create a new scene if you want to keep overlays organized separately. Any broadcasting software can also be used, such as Xsplit Broadcaster.
 
 ---
 
-### 2. Add a Browser Source
+###  Add a Browser Source
 
 1. In the **Sources** panel, click the **+** icon.
 2. Select **Browser** from the list.
@@ -21,7 +21,7 @@ Open **OBS Studio/Streamlabs** and go to the scene you want to add your overlay 
 
 ---
 
-### 3. Configure the Overlay
+###  Configure the Overlay
 
 A properties window will appear. Here’s what to do:
 
@@ -53,7 +53,7 @@ Then click **OK**.
 
 ---
 
-### 4. Position and Adjustment
+###  Position and Adjustment
 
 After adding, you’ll see the overlay appear on your scene preview. You can:
 - Move it around like any other source.
@@ -64,7 +64,7 @@ If the overlay doesn’t show right away, make sure your bot and server are runn
 
 ---
 
-### 5. Using the Interact Button
+###  Using the Interact Button
 
 Some overlays require a manual action before they can start working properly, this includes the Music player and Soundboard Player overlay.
 This is because an [autoplay policy](https://developer.chrome.com/blog/autoplay/) that blocks media playback until the user interacts with the page.
@@ -80,7 +80,7 @@ To enable music playback:
 
 ---
 
-### 6. Available Overlays
+###  Available Overlays
 
 ManaoBot currently supports multiple overlay types:
 
@@ -93,7 +93,7 @@ ManaoBot currently supports multiple overlay types:
 
 ---
 
-### 7. Troubleshooting
+###  Troubleshooting
 
 If an overlay does not appear:
 1. Ensure that **ManaoBot** and **ManaoWeb** are running (you should be able to visit `http://localhost:3000` in your browser).

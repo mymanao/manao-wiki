@@ -2,43 +2,93 @@
 title: Account Linking
 ---
 
-One of the things that makes Manao Bot stand out from other bots (probably) is its ability to link account data across multiple platforms. Currently, it supports linking Twitch, Kick, and Discord together.
+One thing that makes Manao stand out (probably 😄) is its ability to link accounts across multiple platforms.  
+Currently, it supports linking **Twitch**, **Kick**, and **Discord** together.
 
-This guide will walk you through how to link your accounts across these platforms using the `link` command.
+This guide will show you how to link your accounts using the `link` command.
 
-:::danger
-Streamers must enable the Manao Discord Bot first before they can use the `link` command.
-:::
+---
 
-### Generate a Code
+### How Account Linking Works
 
-The first step is to generate a verification code. This code is issued by the Manao Discord Bot and acts as the bridge to connect your account across different platforms.
+Manao uses a **pairing code system**.  
+One platform generates a code, and another platform uses that code to connect the accounts.
 
-You can generate the code by using the `link` command in a Discord channel where the Manao Discord Bot is present. Simply type:
+You don’t have to start from Discord anymore — you can begin from any supported platform.
 
+---
+
+### Generate a Linking Code
+
+You can generate a code from **any platform** that Manao supports:
+
+**Twitch** — type in chat:
+```
+
+!link
+
+```
+
+**Kick** — type in chat:
+```
+
+!link
+
+```
+
+**Discord** — use the slash command:
 ```
 
 /link
 
 ```
 
-The Manao Discord Bot will reply with a 6-character code. You will use this code to link your account to other platforms.
+The bot will reply with a 6-character code, for example: `X7K2PQ`
 
 :::tip
-This code is valid for only 1 minute. If it expires, you’ll need to generate a new one.
-Once used, the code cannot be reused. You must generate a new code each time you want to link an account.
+The code is valid for **1 minute only**. If it expires, you must generate a new one.
+
+Each code can be used only once. After it is used, it will be deleted immediately.
 :::
 
-### Link Your Account
+---
 
-After receiving the code, you can use it to link your account to other platforms.
+### Link the Account
 
-In the Twitch or Kick chat, type:
+Once you have the code, use it on the platform you want to connect:
 
+**Twitch / Kick** — type in chat:
 ```
 
 !link [code]
 
 ```
 
-And that’s it, your accounts are now linked!
+**Discord** — use the slash command:
+```
+
+/link [code]
+
+```
+
+That’s it — you’re done!
+
+---
+
+### Usage Examples
+
+**Link Twitch with Discord:**
+1. Type `!link` in Twitch chat → receive code `X7K2PQ`
+2. Type `/link X7K2PQ` in Discord → Linked successfully ✅
+
+**Link Kick with Discord:**
+1. Type `!link` in Kick chat → receive code `A3BF9Z`
+2. Type `/link A3BF9Z` in Discord → Linked successfully ✅
+
+**Link Twitch with Kick:**
+1. Type `!link` in Twitch chat → receive code `M5QR2W`
+2. Type `!link M5QR2W` in Kick chat → Linked successfully ✅
+
+:::note
+Linked accounts will share data such as balance and display name.
+:::

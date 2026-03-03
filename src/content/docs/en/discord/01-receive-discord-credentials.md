@@ -8,7 +8,7 @@ This guide will walk you through every step, from creating the bot and getting i
 
 ---
 
-### 1. Create an Application
+###  Create an Application
 
 Before we can have a bot, we must first create an application in Discord. Just follow these steps; don't overthink it.
 
@@ -24,7 +24,7 @@ To create an application, your account must have Two-Factor Authentication (2FA)
 
 ---
 
-### 2. Create a Bot Account
+###  Create a Bot Account
 
 Right now, we just have an empty application. We need to add an actual bot user to it. Follow these steps:
 
@@ -35,7 +35,7 @@ On this page, you can also customize the bot's profile, such as its profile pict
 
 ---
 
-### 3. Get the Bot Token and Client ID
+###  Get the Bot Token and Client ID
 
 We've reached the important part. This is where we'll get the **Client ID** and **Bot Token**, which we'll use to configure our bot.
 
@@ -72,7 +72,7 @@ So your bot may remain secure.
 
 ---
 
-### 4. Invite the Bot to a Server
+###  Invite the Bot to a Server
 
 The bot is ready, but it has nowhere to go. We need to invite it to a server. Here's how:
 

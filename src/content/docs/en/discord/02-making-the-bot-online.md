@@ -1,86 +1,64 @@
 ---
-title: Making the Bot Online
+title: Get Bot Token and Client ID from Discord
 ---
 
-This page isn’t hard at all. Even a kindergartener can do it. Seriously. You just need to tweak the config file a little.
+Before a bot can join a server and start chatting, it needs a way to log in. Discord bots use something called a **Bot Token** to log in and operate. Unlike Twitch or Kick, you don’t have to deal with OAuth or scopes. Just create a bot, copy the Token, and paste it into the setup script.
 
----
-
-### What is the .env file?
-
-Before we start, you need to know what the **".env"** file is.
-
-It’s the file that stores all the important information for your bot — tokens, passwords, and various settings like which features you want to enable.
-
-This file is extremely important. **Never share it with anyone.**
-
-It will be created automatically when you run the installer and complete the setup. If it’s missing, just run the installer again (open your ManaoBot folder, go to the `tools/windows` folder, and open the `INSTALLER.bat` file).
+Alright, enough introduction — let’s get started.
 
 ---
 
-### Setup Steps
+### Create an Application
 
-Follow these steps one by one. No need to rush.
+Before having a bot, you need to create an application in Discord. Follow these steps:
 
-#### 1. Open the ManaoBot folder
+1. Log in to the [Discord Developer Portal](https://discord.com/developers/applications)
+2. Click the **"New Application"** button in the top-right corner
+3. Give it any name you want (this is NOT the bot’s display name in servers — it’s just the application name)
+4. Click **"Create"** and you’re done
 
-Open the folder where you installed ManaoBot.
+:::caution
+The account used to create the application must have Two-Factor Authentication (2FA) enabled. If you don’t know how to enable it, read [Using an Authenticator App on Discord](https://support.discord.com/hc/en-us/articles/219576828-Setting-up-Two-Factor-Authentication)
+:::
 
-If you don’t know where it is, press `⊞ Win` + `R`, then type:
+---
 
-```
+### Get the Bot Token
 
-powershell -NoExit -Command "Set-Location -Path $env:MANAO_PATH"
+Now for the important part. Follow these steps:
 
-````
+1. In the left sidebar, click the **"Bot"** tab
+2. Click **"Reset Token"**
+3. Enter your 2FA code if prompted
+4. A long string of text will appear — that is your **Bot Token**
+5. Click **"Copy"** and store it somewhere safe immediately. Once you leave this page, you won’t be able to view it again. If lost, you must reset it.
 
-Press Enter, and it will take you straight to that folder.
+:::danger
+**Important!** Your Bot Token is your bot’s secret key. Never share it with anyone. Never post it on GitHub or any public platform. Anyone who gets it can fully control your bot.
+:::
 
-#### 2. Run the optional feature setup
+---
 
-Once PowerShell is open, type this command and press Enter:
+### Invite the Bot to a Server
 
-```powershell
-bun optsetup
-````
+Your bot is ready, but it has nowhere to go yet. You need to invite it to a server:
+
+1. In the left sidebar, click **"OAuth2"** and select **"URL Generator"**
+2. Under **Scopes**, check **`bot`**
+3. Under **Bot Permissions**, check **`Administrator`**
+4. Copy the generated URL at the bottom
+5. Open the URL in your browser, select your server, and click **"Authorize"**
+
+---
+
+### Configure the Bot in Manao
+
+**Windows**: Run `ManaoBotSetup.exe` again. Click "Next" until finished, then check "Run powershell.exe" and click "Finish".
+
+**MacOS/Linux**: Open the ManaoBot installation folder then run `bun setup`.
 
 You’ll see something like this:
 
 ```terminaloutput
-⟦◄ ManaoBot v4.0.0 - Configuration ►⟧
-? Do you want to enable Manao Discord Bot? (Y/n)
-```
-
-Just press Enter.
-
-#### 3. Enter the Bot Token
-
-Then it will show:
-
-```terminaloutput
-⟦◄ ManaoBot v4.0.0 - Configuration ►⟧
-√ Do you want to enable Manao Discord Bot? Yes
-⚠ To enable Discord integration, you need to create a Discord Bot and get its token. Read the guide below:
-→ English: https://manaobot.netlify.app/en/discord/00-getting-started/
-→ Thai: https://manaobot.netlify./discord/00-getting-started/
-? Enter your Discord Bot Token (Leave blank for unchanged) [input is masked]
-```
-
-Take the **Bot Token** you got from the [Discord Developer Portal](https://discord.com/developers/applications) and paste it here, then press Enter.
-
-(It won’t show the token while you type. Don’t panic. Just press Enter.)
-
-After that, it will ask:
-
-```terminaloutput
-? Do you want to enable Manao Kick Bot? (Y/n)
-```
-
-Type `n` and press Enter.
-
-#### 4. All done 🎉
-
-That’s it. You’re done. You can run ManaoBot now!
-
-If it doesn’t work, double-check that your token is correct.
-If you’re still having issues, feel free to ask in [Discord](https://discord.gg/vkW7YMyYaf).
+⟦◄ ManaoBot v4.1.0 - Configuration ►⟧
+? Do you want to enable Manao Twitch Bot? (Y/n)
