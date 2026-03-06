@@ -11,7 +11,7 @@ export default defineConfig({
       title: 'Manao',
       plugins: [starlightLlmsTxt()],
       logo: {
-        src: "./public/favicon.svg",
+        src: "./public/manao_mini.svg",
         replacesTitle: true,
       },
       defaultLocale: 'root',
@@ -44,22 +44,22 @@ export default defineConfig({
                 {
                   label: 'Getting Started',
                   translations: { th: "มาเริ่มกันเถอะ" },
-                  slug: 'guides/00-getting-started'
+                  slug: 'guides/getting-started'
                 },
                 {
                   label: 'Receive Client id and Secrets from Twitch',
                   translations: { th: "รับไคล์แอนต์ไอดีและซีเครทจากทวิช" },
-                  slug: 'guides/01-receive-client-id-and-secrets-from-twitch'
+                  slug: 'guides/receive-client-id-and-secrets-from-twitch'
                 },
                 {
                   label: 'Project Installation',
                   translations: { th: "ติดตั้งโปรเจกต์" },
-                  slug: 'guides/02-project-installation'
+                  slug: 'guides/project-installation'
                 },
                 {
                   label: 'Setting up Manao',
                   translations: { th: "ตั้งค่ามะนาว" },
-                  slug: 'guides/03-setting-up-manao'
+                  slug: 'guides/setting-up-manao'
                 },
               ]
             },
@@ -70,12 +70,12 @@ export default defineConfig({
                 {
                   label: 'Using ManaoWeb',
                   translations: { th: "เริ่มใช้งานมะนาวเว็บ" },
-                  slug: 'guides/04-using-manaoweb'
+                  slug: 'guides/using-manaoweb'
                 },
                 {
                   label: 'Adding Overlays in OBS',
                   translations: { th: "เพิ่มโอเวอร์เลย์ใน OBS" },
-                  slug: 'guides/05-adding-overlays-in-obs'
+                  slug: 'guides/adding-overlays-in-obs'
                 },
               ]
             },
@@ -86,17 +86,17 @@ export default defineConfig({
                 {
                   label: 'Linking Channel Points to Soundboard',
                   translations: { th: "ลิงก์แต้มช่องกับซาวด์บอร์ด" },
-                  slug: 'guides/06-linking-channel-points-to-soundboard'
+                  slug: 'guides/linking-channel-points-to-soundboard'
                 },
                 {
                   label: 'Adding Custom Replies',
                   translations: { th: "เพิ่มข้อความตอบกลับอัตโนมัติ" },
-                  slug: 'guides/07-adding-custom-replies'
+                  slug: 'guides/adding-custom-replies'
                 },
                 {
                   label: 'Writing your First Custom Command',
                   translations: { th: "เขียนคำสั่งแรก" },
-                  slug: 'guides/08-writing-your-first-custom-command'
+                  slug: 'guides/writing-your-first-custom-command'
                 },
               ]
             },
@@ -107,7 +107,7 @@ export default defineConfig({
                 {
                   label: 'Connecting to External Events',
                   translations: { th: "เชื่อมต่อกับอีเวนต์ภายนอก" },
-                  slug: 'guides/09-connecting-to-external-events'
+                  slug: 'guides/connecting-to-external-events'
                 },
               ]
             },
@@ -118,17 +118,17 @@ export default defineConfig({
                 {
                   label: 'Getting Started',
                   translations: { th: "มาเริ่มกันเถอะ" },
-                  slug: 'discord/00-getting-started'
+                  slug: 'discord/getting-started'
                 },
                 {
                   label: 'Receive Discord Credentials',
                   translations: { th: "รับโทเค็นและไอดีไคล์เอนต์ของบอต" },
-                  slug: 'discord/01-receive-discord-credentials'
+                  slug: 'discord/receive-discord-credentials'
                 },
                 {
                   label: 'Making the Bot Online',
                   translations: { th: "ทำให้บอตออนไลน์" },
-                  slug: 'discord/02-making-the-bot-online'
+                  slug: 'discord/making-the-bot-online'
                 },
               ]
             },
@@ -139,17 +139,17 @@ export default defineConfig({
                 {
                   label: 'Getting Started',
                   translations: { th: "มาเริ่มกันเถอะ" },
-                  slug: 'kick/00-getting-started'
+                  slug: 'kick/getting-started'
                 },
                 {
                   label: 'Setup Ngrok',
                   translations: { th: "ตั้งค่า Ngrok" },
-                  slug: 'kick/01-setup-ngrok'
+                  slug: 'kick/setup-ngrok'
                 },
                 {
                   label: 'Receive Kick Credentials',
                   translations: { th: "รับข้อมูลของบอต" },
-                  slug: 'kick/02-receive-kick-credentials'
+                  slug: 'kick/receive-kick-credentials'
                 },
               ]
             },
@@ -190,7 +190,7 @@ export default defineConfig({
         //         {
         //           label: 'Getting Started',
         //           translations: { th: "มาเริ่มกันเถอะ" },
-        //           slug: 'dev/kickit/00-getting-started'
+        //           slug: 'dev/kickit/getting-started'
         //         }
         //       ]
         //     },

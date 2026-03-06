@@ -4,8 +4,7 @@ title: Configure Manao
 
 Setting up **Manao** is easier than peeling a banana. A slightly spiky banana, maybe — but still easy 🙂
 
-This section continues from the previous guide, after running the installation script at the final step.  
-The script helps manage your Client ID and Client Secret, turning a complex process into a simple login flow.
+Before we start, you must run the `ManaoBot Setup` file on your Desktop and follow the instructions below!
 
 ---
 
@@ -16,7 +15,7 @@ Use the arrow keys to select a language, then press `Enter` to confirm.
 
 Next, you’ll see step-by-step instructions explaining how to obtain your **Client ID** and **Client Secret**.
 
-If you’ve already read [this guide](/guides/01-retrieve-client-id-and-secrets-from-twitch),  
+If you’ve already read [this guide](/guides/retrieve-client-id-and-secrets-from-twitch),  
 you can skip this part by typing `n` and pressing `Enter`.
 
 There will be another confirmation screen — just press `Enter` to continue.
@@ -53,13 +52,4 @@ If you're using the same account for both bot and broadcaster, you don’t need 
 
 ### Final Step of Installation
 
-Once the entire setup process is complete,  
-you should see something like this:
-
-![](https://github.com/user-attachments/assets/ec8055fd-2b1a-4776-9fd6-0b9a67d6349c)
-
-You’re all set! 🎉
-
-You can now run Manao by searching for **"Manao Twitch Bot"** in the Start menu, as shown below:
-
-![](https://i.ibb.co/WWrF5NSk/Screenshot-2025-11-11-035107.png)
+Once everything is done, you can open the bot from the ManaoBot icon on your Desktop!

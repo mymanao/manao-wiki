@@ -2,7 +2,11 @@
 title: Adding Custom Replies
 ---
 
-With Manao version 2.2.0, I've introduced the **Custom Replies Manager**, allowing you to automate responses to specific keywords in your Twitch chat. This guide will teach you how to add your custom replies to spice up your Twitch chat!
+With Manao version 2.2.0, I've introduced the **Custom Replies Manager**, allowing you to automate responses to specific keywords in your chat. This guide will teach you how to add your custom replies to spice up your stream!
+
+:::note
+Custom replies work on both **Twitch** and **Kick**.
+:::
 
 ![](https://github.com/user-attachments/assets/5ce0fd8b-514b-4b2a-97be-804c255aaaac)
 
@@ -35,7 +39,7 @@ To create a new custom reply:
 
 ### Testing Your Custom Reply
 
-After saving a custom reply, test it in your Twitch chat:
+After saving a custom reply, test it in your chat:
 
 1. Send a message that matches one of the keywords you configured.
 2. Manao should automatically respond with the appropriate reply.
@@ -47,7 +51,7 @@ After saving a custom reply, test it in your Twitch chat:
 
 If the reply doesn't appear in chat:
 
-1. Ensure Manao is connected to your Twitch channel.
+1. Ensure Manao is connected to your channel.
 2. Verify that the keyword and message match correctly.
 3. Confirm that your bot account has permission to type in chat.
 4. If the problem persists, join the [Discord](https://discord.gg/vkW7YMyYaf) server for support.

@@ -42,4 +42,27 @@ This page play sounds sent from the Soundboard Controller. You can set volume an
 
 ---
 
+### Config Editor
+
+The Config Editor lets you adjust global bot settings without editing any files directly. Changes are saved automatically to `userConfig.json`.
+
+**General**
+- **Language** — Default language for bot responses (`en` / `th`).
+- **Currency Name** — The name or emoji used as the channel currency (e.g. `COIN`, `🪙`).
+
+**Command Prefixes**
+- **Twitch Prefix** — The character that triggers commands in Twitch chat (default: `!`).
+- **Kick Prefix** — The character that triggers commands in Kick chat (default: `!`).
+
+**Chat Rewards**
+
+Configure passive currency earned by chatters just for talking. Settings are independent per platform (Twitch, Kick, Discord):
+
+- **Min / Max** — The range of currency awarded per eligible message.
+- **Chance** — Probability (0–1) that a message awards currency at all. `0.75` means a 75% chance.
+- **Cooldown (s)** — Seconds a user must wait before they can earn currency again.
+
+**Custom Messages**
+
+Customise the messages Manao sends for channel events. Supported events: `onFollow`, `onSubscribe`, `onResubscribe`, `onRaid`. Use `[user]` as a placeholder for the viewer's name and `[viewers]` for the raid viewer count.
 

@@ -27,13 +27,13 @@ title: รับข้อมูลของบอต
 - **Name**: ตั้งชื่ออะไรก็ได้ โดยชื่อนี้จะเป็นชื่อของบอตที่โชว์ในแชท
 - **Description**: เขียนอะไรไปก็ได้
 - **Redirect URI**: ใส่ `http://localhost:3002/callback` ตามนี้เป๊ะ ๆ เลยนะ
-- **Enable Webhooks**: ให้กดเปิด ใส่ `http://localhost:5000` ไปก่อน
+- **Enable Webhooks**: ให้กดเปิด แล้วใส่ `http://[โดเมน NGROK ที่ได้มา]/kick/webhooks` (อ่านวิธีตั้งค่า ngrok ในหน้าที่แล้ว)
 - **Scope Requested**: กดทุกอัน
 6. กด "Create App" เท่านี้ก็เสร็จแล้วจ้า
 
 ถ้าเสร็จแล้ว จะขึ้นหน้าต่างแอพพลิเคชั่นประมาณนี้นะ
 
-![](https://github.com/user-attachments/assets/765bdcf0-8b6f-4678-9e5a-44af6e2e45a1)
+![](/manao-kickdev.png)
 
 ให้เราก๊อป Client ID และ Client Secret เก็บไว้ก่อน เดี๋ยวจะใช้ตอนตั้งค่าบอตต่อไปน้าจ้า
 
@@ -41,26 +41,24 @@ title: รับข้อมูลของบอต
 
 ### ตั้งค่าบอตใน Manao
 
-**Windows**: ให้รันตัว `ManaoBotSetup.exe` อีกรอบ กด "Next" ไปเรื่อย ๆ จนเสร็จแล้วติ๊กถูก "Run powershell.exe" แล้วกด "Finish" ได้เลย
-
-**MacOS/Linux**: เปิด folder ที่ติดตั้ง ManaoBot แล้วรัน `bun setup` 
+เปิด ManaoBot Setup ขึ้นมา
 
 ได้แล้วจะขึ้นหน้าตาประมาณนี้
 ```terminaloutput
 ⟦◄ ManaoBot v4.1.1 - Configuration ►⟧
-✔ Do you want to enable Manao Twitch Bot?
+✔ Do you want to setup Manao Twitch Bot?
 ```
 
-ให้กด Enter ไปเรื่อย ๆ (ยกเว้นถ้าไม่อยากใช้บอต Twitch ให้พิมพ์ "n" แล้วกด Enter) จนกว่าจะเจอคำถามนี้
+ให้กด n แล้ว Enter ไปเรื่อย ๆ จนกว่าจะเจอคำถามนี้
 
 ```terminaloutput
-? Do you want to enable Manao Discord Bot? (Y/n) 
+? Do you want to setup Manao Discord Bot? (Y/n) 
 ```
 
 ถ้ายังไม่เคยใช้ / ไม่ได้ใช้บอต Discord ให้พิมพ์ "n" แล้วกด Enter ไปเลย แต่ถ้าอยากใช้ก็พิมพ์ "Y" แล้วกด Enter เรื่อย ๆ จนกว่าจะเจอคำถามนี้
 
 ```terminaloutput
-? Do you want to enable Manao Kick Bot? (Y/n) 
+? Do you want to setup Manao Kick Bot? (Y/n) 
 ```
 
 อันนี้ให้พิมพ์ "Y" แล้วกด Enter ไปเลยยยย
@@ -68,8 +66,8 @@ title: รับข้อมูลของบอต
 จากนั้นมันจะขึ้นข้อความนี้
 ```terminaloutput
 ⚠ To enable Kick integration, you need to create a Kick Application and get its Client ID and Client Secret. Read the guide below:
-→ English: https://manaobot.netlify.app/en/kick/00-getting-started/
-→ Thai: https://manaobot.netlify./kick/00-getting-started/
+→ English: https://manaobot.netlify.app/en/kick/getting-started/
+→ Thai: https://manaobot.netlify./kick/getting-started/
 ? Enter your Kick Client ID (Leave blank for unchanged)
 ```
 
@@ -89,7 +87,7 @@ title: รับข้อมูลของบอต
 ? Do you want to configure Ngrok? (used for Kick event webhooks) (Y/n) 
 ```
 
-ให้กด Enter แล้วใส่ Authtoken กับ domain ของ ngrok ที่เราได้มาจากขั้นตอนการตั้งค่า ngrok ได้เลย [อ่านเพิ่มเติม](/kick/01-setup-ngrok)
+ให้กด Enter แล้วใส่ Authtoken กับ domain ของ ngrok ที่เราได้มาจากขั้นตอนการตั้งค่า ngrok ได้เลย [อ่านเพิ่มเติม](/kick/setup-ngrok)
 
 ```terminaloutput
 Authorization successful.

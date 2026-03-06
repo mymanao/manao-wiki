@@ -45,22 +45,4 @@ title: ตั้งค่า Ngrok
 
 ---
 
-### แก้ Webhook URL ใน Kick
-
-จำได้ไหม ตอนสร้างแอพเราใส่
-
-```
-http://localhost:5000
-```
-
-ตอนนี้ต้องเปลี่ยนเป็น:
-
-```
-https://[โดเมนที่ได้มา]/kick/webhook
-```
-
-เข้าไปแก้ที่หน้า [Developer](https://kick.com/settings/developer) ของ Kick แล้วกด Save
-
----
-
 ใกล้เสร็จแล้วคับ อ่านคู่มือต่อไปได้เลยคับ!!!!  
