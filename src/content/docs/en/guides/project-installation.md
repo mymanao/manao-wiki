@@ -15,6 +15,24 @@ A terminal window will appear. Run the following command to download the install
 iwr -Uri https://raw.githubusercontent.com/mymanao/Manao/refs/heads/main/tools/installer.ps1 | iex
 ```
 
+:::tip
+If you see a message like this:
+```terminaloutput
+Security Warning: Script Execution Risk
+Invoke-WebRequest parses the content of the web page. Script code in the web page might be run when the page is
+parsed.
+      RECOMMENDED ACTION:
+      Use the -UseBasicParsing switch to avoid script code execution.
+
+      Do you want to continue?
+
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"): c
+```
+
+Type "Y" and press Enter to confirm running the installer script.
+You can review the safety of the script by checking the [installer.ps1](https://raw.githubusercontent.com/mymanao/Manao/refs/heads/main/tools/installer.ps1) file.
+:::
+
 Once the command runs, a ManaoBot Manager window will appear with the following options:
 
 - **Install / Update** — Install or update ManaoBot

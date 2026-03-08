@@ -14,6 +14,25 @@ title: ติดตั้งโปรเจกต์
 iwr -Uri https://raw.githubusercontent.com/mymanao/Manao/refs/heads/main/tools/installer.ps1 | iex
 ```
 
+:::tip
+ถ้ามีเด้งข้อความแบบนี้
+
+```terminaloutput
+Security Warning: Script Execution Risk
+Invoke-WebRequest parses the content of the web page. Script code in the web page might be run when the page is
+parsed.
+      RECOMMENDED ACTION:
+      Use the -UseBasicParsing switch to avoid script code execution.
+
+      Do you want to continue?
+
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"): c
+```
+
+ให้พิมพ์ "Y" แล้วกด Enter เพื่อยืนยันการรันสคริปต์ติดตั้ง
+สามารถตรวจสอบความปลอดภัยของสคริปต์ได้โดยการเข้าไปดูที่ไฟล์ [installer.ps1](https://raw.githubusercontent.com/mymanao/Manao/refs/heads/main/tools/installer.ps1)
+:::
+
 เมื่อรันคำสั่งแล้ว จะมีหน้าต่าง ManaoBot Manager เด้งขึ้นมาให้เลือกการดำเนินการ
 
 - **Install / Update** — ติดตั้งหรืออัปเดต ManaoBot
