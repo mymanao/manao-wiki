@@ -2,7 +2,7 @@
 import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
 
 export async function getStaticPaths() {
-  const res = await fetch('https://raw.githubusercontent.com/tinarskii/Manao-v5/refs/heads/main/docs/data/commands.generated.json');
+  const res = await fetch('https://gitlab.com/mymanao/Manao/-/raw/master/docs/data/commands.generated.json?ref_type=heads');
   const commands = await res.json();
 
   const langs = ['en', 'th'];
