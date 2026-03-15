@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="46ba3656-0890-46e8-bc91-3f7304bafac5" name="Changes" comment="feat: v5">
-      <change beforePath="$PROJECT_DIR$/src/pages/[lang]/commands/[...slug].astro" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/[lang]/commands/[...slug].astro" afterDir="false" />
+    <list default="true" id="46ba3656-0890-46e8-bc91-3f7304bafac5" name="Changes" comment="fix: fetch URL">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/docs/en/index.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/docs/en/index.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/docs/index.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/docs/index.mdx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +77,8 @@
       <updated>1773586793388</updated>
       <workItem from="1773586794614" duration="2000" />
       <workItem from="1773587170616" duration="389000" />
-      <workItem from="1773587612367" duration="7273000" />
+      <workItem from="1773587612367" duration="7292000" />
+      <workItem from="1773595103033" duration="97000" />
     </task>
     <task id="LOCAL-00001" summary="feat: v5">
       <option name="closed" value="true" />
@@ -92,7 +96,15 @@
       <option name="project" value="LOCAL" />
       <updated>1773594729418</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="fix: fetch URL">
+      <option name="closed" value="true" />
+      <created>1773594896630</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1773594896630</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -100,7 +112,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat: v5" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: v5" />
+    <MESSAGE value="fix: fetch URL" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: fetch URL" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>
