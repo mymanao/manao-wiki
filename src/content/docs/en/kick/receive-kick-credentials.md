@@ -2,6 +2,10 @@
 title: Receive Kick Credentials
 ---
 
+Before the bot can start chatting, it needs a way to log in. Kick uses the OAuth 2.0 system to let the bot request access to your channel.
+
+---
+
 Manao needs a **Client ID** and **Client Secret** from Kick to authenticate the bot.
 
 ---

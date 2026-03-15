@@ -24,3 +24,5 @@ YouTube has no WebSocket API, so Manao uses **polling** — fetching messages ev
 :::note
 The bot only starts reading chat when there is an **active live broadcast**. If you're not live, it retries every 60 seconds.
 :::
+
+Read the next page to see how to get your credentials.
