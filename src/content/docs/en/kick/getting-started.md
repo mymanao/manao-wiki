@@ -2,17 +2,10 @@
 title: Getting Started
 ---
 
-Guess what? Manao now **supports Kick**! 🎉  
-O streamers of the realm, come forth and use my bot, I beg you.
+Manao v5 supports **Kick**! Setup is handled through the Setup Wizard — no CLI needed.
 
-You’ll need at least **Manao version 4.0.0** to use this feature.  
-If you haven’t updated yet, go update first.
+:::note
+This guide assumes ManaoBot is already installed and running. If not, read the [Getting Started guide](/en/guides/getting-started/) first.
+:::
 
-This guide will walk you through everything from A to Z — from initial setup all the way to using commands on Kick.
-
-Before we continue, this guide assumes that you have already installed ManaoBot and have it running.  
-If not, go read the [Getting Started Guide](/guides/getting-started/) first.
-
-Alright. Ready?
-
-Let’s go.
+Kick uses **webhooks** to deliver chat messages to the bot, which requires Ngrok as a tunnel since the bot runs locally and can't be reached directly from the internet.

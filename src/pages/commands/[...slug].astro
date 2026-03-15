@@ -2,7 +2,7 @@
 import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
 
 export async function getStaticPaths() {
-  const res = await fetch('https://raw.githubusercontent.com/mymanao/Manao/refs/heads/main/docs/data/commands.generated.json');
+  const res = await fetch('https://gitlab.com/mymanao/Manao/-/raw/master/docs/data/commands.generated.json?ref_type=heads');
   const commands = await res.json();
 
   const langs = ['en', 'th'];
@@ -56,6 +56,7 @@ const platformMap = {
   twitch: { label: 'Twitch', color: '#7c3aed' },
   kick: { label: 'Kick', color: '#16a34a' },
   discord: { label: 'Discord', color: '#4338ca' },
+  youtube: { label: 'YouTube', color: '#cc0000' },
 };
 
 let pageTitle = '';

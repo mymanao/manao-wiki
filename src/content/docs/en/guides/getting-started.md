@@ -1,32 +1,27 @@
 ---
-title: Let’s Get Started
+title: Getting Started
 ---
 
-Welcome to **Manao Wiki**!  
-Feel free to explore and read whatever you like 🙂
+Welcome to the **Manao Wiki**!
+Browse through at your own pace. The guide is split into two main sections:
 
-The guide is divided into 2 main sections:
-
-1. **Guide for Streamers**
+1. **Streamer Guide**
     - Installation
-    - Basic Usage
-    - Advanced Configuration
-    - External Integrations
-    - Manao with Discord
-    - Manao with Kick
+    - Basic usage
+    - Customization
+    - External integrations
+    - Discord integration
+    - Kick integration
+    - YouTube integration
+2. **User Guide**
+    - All commands
+    - Linking your account
 
-2. **Guide for Users**
-    - All Commands
-    - Account Linking
+You don't need to read everything — if you just want basic usage, head to the Streamer Guide. If you want to know what commands are available, go to the User Guide.
 
-You don’t have to read everything.  
-If you only want to learn the basics, head straight to the streamer section.  
-If you just want to see what commands Manao has, go to the user section.
+:::tip[Let AI read this for you!]
+This wiki has an llms.txt file so AI can analyze and answer questions about Manao easily. Just add this link to your message:
+https://manao.otternoon.com/llms.txt
 
-:::tip[Let AI read it for you!]
-This guide includes an `llms.txt` file to make it easier for AI to analyze and give recommendations. Just add this link to your message and send it to an AI:
-
-https://manaobot.netlify.app/llms.txt
-
-This link allows AI to analyze **every page**, so if you don’t feel like reading or find it difficult, you can simply let AI read it for you.
+This link lets AI analyze **every page**, so if you don't feel like reading or find it hard to follow, just send it to your AI of choice.
 :::

@@ -1,94 +1,61 @@
 ---
-title: Account Linking
+title: Linking Your Account
 ---
 
-One thing that makes Manao stand out (probably 😄) is its ability to link accounts across multiple platforms.  
-Currently, it supports linking **Twitch**, **Kick**, and **Discord** together.
+Manao can link accounts across platforms — Twitch, Kick, Discord, and YouTube. Once linked, your balance and nickname are shared across all platforms.
 
-This guide will show you how to link your accounts using the `link` command.
-
----
-
-### How Account Linking Works
-
-Manao uses a **pairing code system**.  
-One platform generates a code, and another platform uses that code to connect the accounts.
-
-You don’t have to start from Discord anymore — you can begin from any supported platform.
+Linking uses a **code-pair system**: one platform generates a code, and the other uses it to link.
 
 ---
 
-### Generate a Linking Code
+### Generate a Link Code
 
-You can generate a code from **any platform** that Manao supports:
+From **any supported platform**:
 
-**Twitch** — type in chat:
+**Twitch / Kick / YouTube** — type in chat:
 ```
-
 !link
-
 ```
 
-**Kick** — type in chat:
+**Discord** — use slash command:
 ```
-
-!link
-
-```
-
-**Discord** — use the slash command:
-```
-
 /link
-
 ```
 
-The bot will reply with a 6-character code, for example: `X7K2PQ`
+The bot replies with a 6-character code like `X7K2PQ`.
 
 :::tip
-The code is valid for **1 minute only**. If it expires, you must generate a new one.
-
-Each code can be used only once. After it is used, it will be deleted immediately.
+Codes expire after **1 minute** and can only be used once.
 :::
 
 ---
 
-### Link the Account
+### Link Your Account
 
-Once you have the code, use it on the platform you want to connect:
+Use the code on the other platform:
 
-**Twitch / Kick** — type in chat:
+**Twitch / Kick / YouTube** — type in chat:
 ```
-
 !link [code]
-
 ```
 
-**Discord** — use the slash command:
+**Discord** — slash command:
 ```
-
 /link [code]
-
 ```
-
-That’s it — you’re done!
 
 ---
 
-### Usage Examples
+### Examples
 
-**Link Twitch with Discord:**
-1. Type `!link` in Twitch chat → receive code `X7K2PQ`
-2. Type `/link X7K2PQ` in Discord → Linked successfully ✅
+**Link Twitch ↔ Discord:**
+1. Type `!link` in Twitch chat → get code `X7K2PQ`
+2. Type `/link X7K2PQ` in Discord → linked ✅
 
-**Link Kick with Discord:**
-1. Type `!link` in Kick chat → receive code `A3BF9Z`
-2. Type `/link A3BF9Z` in Discord → Linked successfully ✅
-
-**Link Twitch with Kick:**
-1. Type `!link` in Twitch chat → receive code `M5QR2W`
-2. Type `!link M5QR2W` in Kick chat → Linked successfully ✅
+**Link Kick ↔ YouTube:**
+1. Type `!link` in Kick chat → get code `A3BF9Z`
+2. Type `!link A3BF9Z` in YouTube chat → linked ✅
 
 :::note
-Linked accounts will share data such as balance and display name.
+Linked accounts share balance and nickname across all platforms.
 :::

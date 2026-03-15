@@ -1,103 +1,48 @@
 ---
-title: Install the Project
+title: Project Installation
 ---
 
-Once you have your **Client ID** and **Client Secret**, you're ready to download Manao!
+Once you've prepared everything, download Manao using the link below.
 
----
-
-### Installation (Windows)
-
-Open PowerShell by pressing the Windows key, typing "powershell", and pressing Enter.
-A terminal window will appear. Run the following command to download the installer from GitHub:
-
-```powershell
-iwr -Uri https://raw.githubusercontent.com/mymanao/Manao/refs/heads/main/tools/installer.ps1 | iex
-```
-
-:::tip
-If you see a message like this:
-```terminaloutput
-Security Warning: Script Execution Risk
-Invoke-WebRequest parses the content of the web page. Script code in the web page might be run when the page is
-parsed.
-      RECOMMENDED ACTION:
-      Use the -UseBasicParsing switch to avoid script code execution.
-
-      Do you want to continue?
-
-[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"): c
-```
-
-Type "Y" and press Enter to confirm running the installer script.
-You can review the safety of the script by checking the [installer.ps1](https://raw.githubusercontent.com/mymanao/Manao/refs/heads/main/tools/installer.ps1) file.
+:::danger
+Manao is **free**. If someone is selling it, do not buy it! Only download from this site.
 :::
 
-Once the command runs, a ManaoBot Manager window will appear with the following options:
+---
 
-- **Install / Update** — Install or update ManaoBot
-- **Run Setup** — Run the configuration script
-- **Uninstall** — Remove ManaoBot from your machine
+### Download the Installer
 
-### First-time Installation
+| OS      | Download link |
+|:--------|:--------------|
+| Windows | [manao-installer-windows-x64.exe](https://gitlab.com/mymanao/installer/-/jobs/artifacts/v1.1.0/raw/dist/manao-installer-windows-amd64.exe?job=build:windows) |
+| Linux   | [manao-installer-linux-x64](https://gitlab.com/mymanao/installer/-/jobs/artifacts/v1.1.0/raw/dist/manao-installer-linux-amd64?job=build:linux) |
 
-1. Select **Install / Update**
-2. If Git, Bun, or Twitch CLI are not installed, the installer will ask if you want to install them automatically
-3. Select the version you want to install
-4. ManaoBot will be downloaded and installed to `%USERPROFILE%\ManaoBot` automatically
-5. Once complete, **ManaoBot** and **ManaoBot Setup** shortcuts will be created on your Desktop and Start Menu
-6. The installer will ask if you want to run Setup immediately — if this is your first time, select **Yes**
-
-### Uninstalling
-
-1. Run the same command in PowerShell and select **Uninstall**
-2. The installer will ask if you want to save your config files before removal — select **Yes** to keep your data, which will be saved to `%USERPROFILE%\ManaoBot-backup`
-3. Confirm the deletion twice, and ManaoBot along with all its shortcuts will be removed
+The Manao installer is open source — you can check the code at the [GitLab Repository](https://gitlab.com/mymanao/installer).
 
 ---
 
-### Installation (macOS/Linux)
+### Install the Project
 
-Open a terminal and download the installer from GitHub:
+![](https://r2.otternoon.com/manao5-installer.png)
 
-```bash
-curl -O https://raw.githubusercontent.com/tinarskii/Manao/refs/heads/main/tools/installer.sh
-```
+1. Run the downloaded installer file — a browser window will open
+2. The installer will handle everything automatically, no action needed
+3. Wait until all steps are complete, then close the program
 
-Then run the installer with:
+---
 
-```bash
-chmod +x installer.sh && ./installer.sh
-```
+### After Installation
 
-Once the script runs, a ManaoBot Manager window will appear with the following options:
+![](https://r2.otternoon.com/manao5-installer-done.png)
 
-- **Install / Update** — Install or update ManaoBot
-- **Run Setup** — Run the configuration script
-- **Uninstall** — Remove ManaoBot from your machine
+Once the installer is done, search for **Manao Setup** in the Start Menu (press Windows key and type) or find it on your Desktop, then open it.
 
-### First-time Installation
+The Setup Wizard will guide you through all the necessary configuration for Manao through a simple form-based interface — no need to edit files manually.
 
-1. Select **Install / Update**
-2. If jq or Git are not installed, the installer will ask if you want to install them automatically
-3. If Bun is not installed, it will be downloaded and installed automatically
-4. Select the version you want to install
-5. ManaoBot will be downloaded and installed to `~/ManaoBot` automatically
-6. Once complete, **ManaoBot** and **ManaoBot Setup** shortcuts will be created on your Desktop and App Menu
-7. The installer will ask if you want to run Setup immediately — if this is your first time, select **Yes**
+You can configure all 4 platforms:
+- Twitch
+- Discord
+- Kick
+- YouTube
 
-### Uninstalling
-
-1. Run the script again and select **Uninstall**
-2. The installer will ask if you want to save your config files before removal — select **Yes** to keep your data, which will be saved to `~/ManaoBot-backup`
-3. Confirm the deletion twice, and ManaoBot along with all its shortcuts will be removed
-
-:::note
-The script does not install twitch-cli automatically. You will need to install it manually via Homebrew:
-```bash
-brew install twitch-cli
-```
-If you don't have Homebrew, visit https://brew.sh/ and follow the installation instructions.
-
-For more information, visit https://dev.twitch.tv/docs/cli/
-:::
+Read the next page to see how to configure each platform!

@@ -2,100 +2,37 @@
 title: รับข้อมูลของบอต
 ---
 
-ก่อนที่บอตจะเริ่มแชทได้ มันต้องมีช่องทางในการล็อกอินก่อน โดย Kick เนี่ยกำหนดให้บอตใช้สิ่งที่เรียกว่า Client ID และ Client Secret ในการขออนุญาต
-ให้บอตเราเชื่อมต่อกับ Kick ได้ และต้องบอกด้วยว่าบอตของเราจะมีสิทธิ์ในการทำอะไรบ้าง เช่น ส่งข้อความ (chat:write), แบนผู้ใช้ (moderator:ban), หรืออื่น ๆ ซึ่งสิทธิ์พวกนี้เรา
-จะเรียกว่า Scopes นั่นเอง
-
-หลังจากเราอนุญาตในหน้าเว็บเรียบร้อย Kick จะออกรหัสชั่วคราวที่เรียกว่า Access Token ซึ่งตัวนี้แหละ ที่บอตของเราจะใช้คุยกับ Kick ได้
-
-ทั้งหมดที่กล่าวมาเนี่ย ในภาษาเทคนิคเนิร์ด ๆ เนี่ยเขาเรียกกันว่า "OAuth 2.0 Authorization Code Flow"
-ซึ่งเป็นมาตรฐานที่ใช้กันทั่วโลกในการให้แอพพลิเคชันเข้าถึงข้อมูลหรือบริการ ของผู้ใช้โดยไม่ต้องเปิดเผยรหัสผ่านจริง ๆ ของผู้ใช้
-
-โอเค เกริ่นมาเยอะแล้ว มาเริ่มกันเลยดีกว่า!
+ก่อนที่บอตจะเริ่มแชทได้ มันต้องมีช่องทางในการล็อกอินก่อน Kick ใช้ระบบ OAuth 2.0 ให้บอตขอสิทธิ์เข้าถึงช่องของเรา
 
 ---
 
 ### สร้างแอพพลิเคชัน
 
-มะนาวคือแอพพลิเคชั่นหนึ่งของ Kick ซึ่งเราต้องสร้างแอพฯ ขึ้นมาก่อน ทำตามนี้เลย
+มะนาวคือแอพพลิเคชันหนึ่งของ Kick ซึ่งเราต้องสร้างแอพฯ ขึ้นมาก่อน ทำตามนี้เลย
 
 1. ล็อกอินเข้า [Kick.com](https://kick.com/)
-2. ไปที่หน้าการตั้งค่า [Settings](https://kick.com/settings)
-3. คลิกที่แท็บ **["Developer"](https://kick.com/settings/developer)** ที่อยู่ในเมนูด้านซ้าย
-4. คลิกปุ่ม **["Create new"](https://kick.com/settings/developer?action=create)** ที่มุมบนขวา
-5. ตั้งค่าตามนี้เลย
-- **Name**: ตั้งชื่ออะไรก็ได้ โดยชื่อนี้จะเป็นชื่อของบอตที่โชว์ในแชท
-- **Description**: เขียนอะไรไปก็ได้
-- **Redirect URI**: ใส่ `http://localhost:3002/callback` ตามนี้เป๊ะ ๆ เลยนะ
-- **Enable Webhooks**: ให้กดเปิด แล้วใส่ `http://[โดเมน NGROK ที่ได้มา]/kick/webhooks` (อ่านวิธีตั้งค่า ngrok ในหน้าที่แล้ว)
-- **Scope Requested**: กดทุกอัน
-6. กด "Create App" เท่านี้ก็เสร็จแล้วจ้า
+2. ไปที่การตั้งค่า [Settings → Developer](https://kick.com/settings/developer)
+3. คลิกปุ่ม **Create new** ที่มุมบนขวา
+4. ตั้งค่าตามนี้เลย
+   - **Name**: ตั้งชื่ออะไรก็ได้
+   - **Description**: เขียนอะไรไปก็ได้
+   - **Redirect URI**: ใส่ `http://localhost:3002/callback` ตามนี้เป๊ะ ๆ เลยนะ
+   - **Enable Webhooks**: ให้กดเปิด แล้วใส่ `http://[โดเมน NGROK ที่ได้มา]/kick/webhooks` ([อ่านวิธีตั้งค่า ngrok](/kick/setup-ngrok))
+   - **Scope Requested**: กดทุกอัน
+5. กด **Create App** เท่านี้ก็เสร็จแล้วจ้า
 
-ถ้าเสร็จแล้ว จะขึ้นหน้าต่างแอพพลิเคชั่นประมาณนี้นะ
+ก๊อป **Client ID** และ **Client Secret** เก็บไว้ก่อน เดี๋ยวจะใช้ตอนตั้งค่าต่อไปนะจ๊ะ
 
 ![](/manao-kickdev.png)
 
-ให้เราก๊อป Client ID และ Client Secret เก็บไว้ก่อน เดี๋ยวจะใช้ตอนตั้งค่าบอตต่อไปน้าจ้า
-
 ---
 
-### ตั้งค่าบอตใน Manao
+### ตั้งค่าใน Setup Wizard
 
-เปิด ManaoBot Setup ขึ้นมา
+เปิด Setup Wizard ขึ้นมาที่ `http://localhost:4000` ไปที่หน้า **Kick** แล้ว:
 
-ได้แล้วจะขึ้นหน้าตาประมาณนี้
-```terminaloutput
-⟦◄ ManaoBot v4.1.1 - Configuration ►⟧
-✔ Do you want to setup Manao Twitch Bot?
-```
-
-ให้กด n แล้ว Enter ไปเรื่อย ๆ จนกว่าจะเจอคำถามนี้
-
-```terminaloutput
-? Do you want to setup Manao Discord Bot? (Y/n) 
-```
-
-ถ้ายังไม่เคยใช้ / ไม่ได้ใช้บอต Discord ให้พิมพ์ "n" แล้วกด Enter ไปเลย แต่ถ้าอยากใช้ก็พิมพ์ "Y" แล้วกด Enter เรื่อย ๆ จนกว่าจะเจอคำถามนี้
-
-```terminaloutput
-? Do you want to setup Manao Kick Bot? (Y/n) 
-```
-
-อันนี้ให้พิมพ์ "Y" แล้วกด Enter ไปเลยยยย
-
-จากนั้นมันจะขึ้นข้อความนี้
-```terminaloutput
-⚠ To enable Kick integration, you need to create a Kick Application and get its Client ID and Client Secret. Read the guide below:
-→ English: https://manaobot.netlify.app/en/kick/getting-started/
-→ Thai: https://manaobot.netlify./kick/getting-started/
-? Enter your Kick Client ID (Leave blank for unchanged)
-```
-
-ให้เอา **Client ID** ที่ได้จากหน้าแอพพลิเคชั่นของ Kick มาใส่ตรงนี้ แล้วกด Enter
-
-ต่อไป
-```terminaloutput
-? Enter your Kick Client Secret (Leave blank for unchanged) [input is masked]
-```
-
-ให้เอา **Client Secret** ที่ได้จากหน้าแอพพลิเคชั่นของ Kick มาใส่ตรงนี้ แล้วกด Enter (มันจะไม่โชว์รหัสที่พิมพ์นะ ไม่ต้องตกใจ กด Enter ได้เลย)
-
-หลังจากนั้น มะนาวจะพาเราไปที่หน้าเว็บของ Kick เพื่อขออนุญาตให้บอตของเราสามารถเชื่อมต่อกับ Kick ได้ ให้กด "Authorize" ได้เลย
-ถ้ามันเสร็จแล้ว จะขึ้นถามต่ออีกว่า
-
-```terminaloutput
-? Do you want to configure Ngrok? (used for Kick event webhooks) (Y/n) 
-```
-
-ให้กด Enter แล้วใส่ Authtoken กับ domain ของ ngrok ที่เราได้มาจากขั้นตอนการตั้งค่า ngrok ได้เลย [อ่านเพิ่มเติม](/kick/setup-ngrok)
-
-```terminaloutput
-Authorization successful.
-```
-
-ปิดหน้าต่าง แค่นี้ก็เรียบร้อยแล้วจ้า!
-
----
-
-ทุกอย่างเหมือนจะเรียบร้อย แต่ยังไม่จบนะ คู่มือต่อไปสอนการตั้งค่า ngrok อ่านต่อได้เลยครับ
-
+1. เปิด toggle **Enable Kick**
+2. กรอก **Client ID** และ **Client Secret**
+3. กรอก **Ngrok Authtoken** และ **Ngrok Domain** ([อ่านวิธีตั้งค่า ngrok](/kick/setup-ngrok))
+4. กดปุ่ม **Authorize Kick Account** — มะนาวจะเปิด browser ให้กด Authorize เองอัตโนมัติ
+5. เมื่อ browser แสดง ✅ แล้ว กลับมากด **Next** ได้เลย

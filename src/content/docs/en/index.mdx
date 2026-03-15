@@ -1,21 +1,21 @@
 ---
-title: Spice up your streams with Manao
-description: Your all-in-one Twitch and Kick chatbot for music, overlays, soundboards, and more.
+title: ManaoBot — A Better Streaming Chat Bot
+description: An all-in-one streaming toolkit for Twitch, Kick, and YouTube with music queue, overlays, soundboard, and more.
 template: splash
 head:
   - tag: title
-    content: Homepage | ManaoBot
+    content: Home | ManaoBot
 hero:
-  tagline: Your all-in-one Twitch and Kick chatbot for music, overlays, soundboards, and more.
+  tagline: An all-in-one streaming toolkit for Twitch, Kick, and YouTube with music queue, overlays, soundboard, and more.
   image:
     file: https://raw.githubusercontent.com/tinarskii/manao/main/docs/manao_full.svg
     alt: Manao Logo
   actions:
-    - text: Download Now!
-      link: /guides/project-installation/
+    - text: Download now!
+      link: /en/guides/project-installation/
       icon: download
-    - text: Documentation
-      link: /guides/getting-started/
+    - text: Getting Started
+      link: /en/guides/getting-started/
       icon: open-book
       variant: secondary
     - text: View on GitHub
@@ -27,7 +27,7 @@ hero:
 import { Card, CardGrid } from '@astrojs/starlight/components';
 import "../../../styles/home.css"
 
-<center><h1>🧡 By Streamers, For Streamers 🍋</h1></center>
+<center><h1>🧡 By streamers, for streamers 🍋</h1></center>
 
 <div class="sponsor-avatars">
   <a href="https://twitch.tv/skypowerful" target="_blank">
@@ -38,42 +38,48 @@ import "../../../styles/home.css"
   </a>
 </div>
 
+
 ## Why Manao?
 
 <CardGrid stagger>
-  <Card title="Music Requests" icon="star">
-    Let your viewers request songs directly from Twitch chat using commands, it even has a built-in music overlay!
+  <Card title="Music Commands" icon="star">
+    Let your viewers request songs directly from chat. Comes with a built-in music overlay supporting Twitch, Kick, and YouTube!
   </Card>
 
-  <Card title="Chat Overlays" icon="comment">
-    A ready-to-use and flexible chat overlay, user can set their custom nickname too.
+  <Card title="Overlays" icon="comment">
+    Chat and music overlays with multiple themes, fully customizable through the Overlay Settings page in the dashboard.
   </Card>
 
   <Card title="Soundboard" icon="rss">
-    Trigger sound effects instantly using soundboard controller or via Twitch Channel Points.
+    Trigger sound effects instantly, or let viewers redeem them with Twitch Channel Points.
   </Card>
 
   <Card title="Custom Commands" icon="setting">
-    Create your own commands using to interact with chat, manage virtual currency, and more!
+    Add your own commands written in JavaScript — they work across all platforms at once.
   </Card>
 
-  <Card title="Open-Source" icon="open-book">
-    Manao is completely open-source and free to use. You can even contribute to its development!
+  <Card title="Open Source" icon="open-book">
+    Manao is free and open source. Secure, flexible, and highly customizable.
+  </Card>
+
+  <Card title="Multi-Platform" icon="discord">
+    Supports Twitch, Kick, Discord, and YouTube in a single bot. Cross-platform account linking included.
   </Card>
 </CardGrid>
 
-## Get Involved
+## Join the community
 
 <CardGrid stagger>
   <Card title="Documentation" icon="document">
-    Read the full setup and integration guide in the <a href="/en/guides/getting-started">docs section</a>.
+    Read the setup and usage guide at <a href="/en/guides/getting-started">Getting Started</a>
   </Card>
 
-  <Card title="Join the Community" icon="discord">
-    Get help, share setups, or show off your stream in our <a href="https://discord.gg/vkW7YMyYaf" target="_blank">Discord</a>.
+  <Card title="Discord Server" icon="discord">
+    Got a question or want to hang out? Join our <a href="https://discord.gg/vkW7YMyYaf" target="_blank">Discord</a>
   </Card>
 
-  <Card title="Support Development" icon="heart">
-    Support Manao via <a href="https://github.com/sponsors/tinarskii" target="_blank">GitHub Sponsors</a> — every donation helps.
+  <Card title="Donate" icon="heart">
+    View donation options at our <a href="https://github.com/tinarskii/manao/wiki#%E0%B9%83%E0%B8%AB%E0%B9%89%E0%B8%84%E0%B8%99%E0%B9%84%E0%B8%97%E0%B8%A2%E0%B8%88%E0%B9%88%E0%B8%B2%E0%B8%A2">donation page</a>.
+    You can also send a payment slip and we'll add your name to the donors list!
   </Card>
 </CardGrid>

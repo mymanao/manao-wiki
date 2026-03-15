@@ -2,179 +2,130 @@
 title: Writing your First Custom Command
 ---
 
-In ManaoWeb Command Manager, you can add your new custom commands! Which may require a lot of programming, but I will guide you through writing your first command. You may need to have a little programming knowledge beforehand. But if you are lazy, copy this entire page into ChatGPT and ask it to do its job.
+In the Dashboard you can add custom commands through the **Custom Commands** page. Commands are written in JavaScript and work across all platforms Manao supports at once.
 
-:::caution[Twitch only]
-Custom commands currently only work on **Twitch**. They are not available on Kick or Discord.
+:::tip
+You can copy this entire page and paste it to an AI to help you write commands — no need to write everything yourself.
 :::
 
+![](https://r2.otternoon.com/manao5-custom-command.png)
+
 ---
 
-### Available Functions and Variables
+### Available Context
 
-The way ManaoBot handles its custom commands is by running the code dynamically inside a controlled environment which is called "context" in which I provide a handful of useful functions and variables for you to use within the code:
-
-**Available functions**
-- **say(text)**: Send message to Twitch chat.
-- **getBalance(userID)**: Get specified user balance.
-- **getInput(order?)**: Get user input from message (e.g. `!command bear fox dog`, getInput(1) -> returns "bear") or returns a full string if index is not specified (e.g. `!command bear fox dog`, getInput() -> returns "bear fox dog"). Starts at 1.
-- **addBalance(userID, amount)**: Add specified amount of money to user.
-- **setBalance(userID, amount)**: Set specified amount of money to user.
-- **subtractBalance(userID, amount)**: Subtract specified amount of money to user.
-- **initAccount(userID)**: Create a bank account for user if not exists.
-
-**Available variables**
-- **client**: Access to ChatClient, ApiClient, and Socket.IO Client, refer to [ClientServices](https://github.com/tinarskii/manao/blob/main/types/index.d.ts#L41).
-- **meta**: Collections of useful data, such as user data, refer to [CommandMeta](https://github.com/tinarskii/manao/blob/main/types/index.d.ts#L47).
-- **message**: The full message received from the chat (E.g. `!command abc`).
-- **args**: An array of user inputs.
-- **language**: Current language. (default is either en/th)
+Manao runs custom commands in an environment that provides `context` and `args` to use:
 
 ```ts
-export interface ClientServices {
-  chat: ChatClient;
-  io: SocketIOServer;
-  api: ApiClient;
-}
+// User info
+context.user.name                // Display name
+context.user.id                  // Manao User ID (used for cross-platform account linking)
+context.user.platform            // Platform ("twitch" | "kick" | "discord" | "youtube")
+context.user.platformID          // User ID on that specific platform
+context.user.roles.isFollower
+context.user.roles.isSubscriber
+context.user.roles.isVIP
+context.user.roles.isModerator
+context.user.roles.isBroadcaster
 
-export interface CommandMeta {
-  user: string;
-  channel: string;
-  channelID: string;
-  userID: string;
-  commands: Map<string, Command>;
-  lang: Language;
-  currency: string;
-}
+// General
+context.channel                  // Channel name
+context.language                 // Bot language ("en" | "th")
+context.currency                 // Currency name
+
+// Send messages
+await context.say("...")         // Send a message in chat
+await context.reply("...")       // Reply with the user's name tagged
+await context.whisper("...")     // Send a private message (if supported by platform)
+
+// Other
+await context.lookupUser("name") // Look up a user by name, returns id or null
+context.emit("event", data)      // Send an event to overlays
+
+// Arguments typed by the user
+args[0], args[1], ...            // e.g. !hello world → args[0] = "world"
 ```
 
 ---
 
-### Simple reply
+### Simple Replies
 
-**!hello [name]**: Greets user that execute this command or a specified text.
-```
-let name = getInput(1) || `@${meta.user}`
-say(`Hello ${name}!`)
-```
+**`!hello [name]`** — Greet a user
 
-**!roll**: Roll a die.
-```
-let result = Math.ceil(Math.random() * 6)
-say(`Result: ${result}`)
+```javascript
+const name = args[0] || `@${context.user.name}`;
+await context.say(`Hello ${name}!`);
 ```
 
-**!dish**: Return a random dish.
+**`!roll`** — Roll a dice
+
+```javascript
+const result = Math.ceil(Math.random() * 6);
+await context.say(`🎲 Rolled: ${result}`);
 ```
-let dishes = [
-"Kao Pad Krapao",
-"Pad Thai",
-"Khao Soi",
-"Mango with Sticky Rice"
-]
-let dish = dishes[Math.floor(Math.random() * dishes.length)]
-say(`You've got: ${dish}!`)
+
+**`!dish`** — Random food suggestion
+
+```javascript
+const dishes = ["Pad Thai", "Green Curry", "Mango Sticky Rice", "Som Tum"];
+const dish = dishes[Math.floor(Math.random() * dishes.length)];
+await context.say(`🍲 You should eat: ${dish}!`);
 ```
 
 ---
 
-### Managing with Balances
+### Balance Management
 
-**!transfer \<user\> \<amount\>**: Transfer money to a specific user. (A modification of an already existing command)
-```
-(async() => {
-let targetName = getInput(1)
+**`!transfer <user> <amount>`** — Transfer currency to another user
 
-if (!targetName) {
-  say("Error: Target not specified")
-  return
+```javascript
+const targetName = args[0];
+const amount = parseInt(args[1], 10);
+
+if (!targetName || isNaN(amount) || amount <= 0) {
+  await context.reply("Usage: !transfer <username> <amount>");
+  return;
 }
 
-let target = await client.api.users.getUserByName(targetName)
-let amount = Number(getInput(2))
-
-if (Number.isNaN(amount)) {
-  say("Error: amount is not a number")
-  return
+const targetId = await context.lookupUser(targetName);
+if (!targetId) {
+  await context.reply(`User ${targetName} not found`);
+  return;
 }
 
-if (!target) {
-  say("Error: Target user not found")
-  return
-}
+// Use context.emit to send data to overlays or other event handlers
+context.emit("transfer", {
+  from: context.user.id,
+  to: targetId,
+  amount,
+});
 
-let userBalance = getBalance(meta.userID)
-let targetBalance = getBalance(target.userID)
-
-if (amount > userBalance) {
-  say(`Error: not enough money, need more ${amount - userBalance} ${meta.currency}`)
-  return
-}
-
-initAccount(target.id)
-subtractBalance(meta.userID, amount)
-addBalance(target.id, amount)
-
-say(`Successfully transferred ${amount} ${meta.currency} from @${meta.user} to @${targetName}`)
-})()
+await context.reply(`Transferred ${amount} ${context.currency} to @${targetName} successfully`);
 ```
 
 ---
 
-### Advanced Minigames
+### Mini Game
 
-**!rps [rock/paper/scissors]**: Play a game of rock, paper, scissors
-```
-let choices = ["rock", "paper", "scissors"]
-let userChoice = getInput(1)?.toLowerCase()
+**`!rps <rock/paper/scissors>`** — Rock Paper Scissors
 
-if (!userChoice || !choices.includes(userChoice)) {
-  say(`@${meta.user} Usage: !rps [rock/paper/scissors]`)
-  return
+```javascript
+const choices = ["rock", "paper", "scissors"];
+const userChoice = args[0]?.toLowerCase();
+
+if (!choices.includes(userChoice)) {
+  await context.reply("Usage: !rps [rock/paper/scissors]");
+  return;
 }
 
-let botChoice = choices[Math.floor(Math.random() * choices.length)]
-let result
-
-if (userChoice === botChoice) {
-  result = "It's a tie!"
-} else if (
+const botChoice = choices[Math.floor(Math.random() * choices.length)];
+let result = "Tie!";
+if (
   (userChoice === "rock" && botChoice === "scissors") ||
   (userChoice === "paper" && botChoice === "rock") ||
   (userChoice === "scissors" && botChoice === "paper")
-) {
-  result = "You win!"
-} else {
-  result = "You lose!"
-}
+) result = "You win! 🎉";
+else if (userChoice !== botChoice) result = "You lose! 😢";
 
-say(`✊✋✌️ You chose ${userChoice}, I chose ${botChoice}. ${result}`)
-```
-
----
-
-### Using Twitch API
-
-**!followage [user]**: Check follow duration
-```
-(async() => {
-  let targetName = getInput(1) || meta.user
-  try {
-    let user = await client.api.users.getUserByName(targetName)
-    if (!user) {
-      say("User not found")
-      return
-    }
-    let follow = await client.api.channels.getChannelFollowers(meta.channelID, user.id)
-    if (follow) {
-      let diffTime = Math.abs(new Date() - follow.data[0].followDate);
-      let diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24)); 
-      say(`@${targetName} has been following for: ${diffDays} days`)
-    } else {
-      say(`@${targetName} is not following`)
-    }
-  } catch(e) {
-    say("Unable to fetch follow info")
-  }
-})()
+await context.say(`✊✋✌️ ${context.user.name} chose ${userChoice}, bot chose ${botChoice}. ${result}`);
 ```

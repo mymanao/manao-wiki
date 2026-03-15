@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="46ba3656-0890-46e8-bc91-3f7304bafac5" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/GetManaoWeb.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/extensions.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/launch.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/astro.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/astro.config.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bun.lock" beforeDir="false" afterPath="$PROJECT_DIR$/bun.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/docs/discord/making-the-bot-online.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/docs/discord/making-the-bot-online.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/docs/discord/receive-discord-credentials.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/docs/discord/receive-discord-credentials.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/docs/en/discord/getting-started.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/docs/en/discord/getting-started.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/docs/en/discord/making-the-bot-online.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/docs/en/discord/making-the-bot-online.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/docs/en/discord/receive-discord-credentials.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/docs/en/discord/receive-discord-credentials.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/docs/en/guides/adding-custom-replies.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/docs/en/guides/adding-custom-replies.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/docs/en/guides/adding-overlays-in-obs.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/docs/en/guides/adding-overlays-in-obs.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/docs/en/guides/connecting-to-external-events.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/docs/en/guides/connecting-to-external-events.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/docs/en/guides/getting-started.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/docs/en/guides/getting-started.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/docs/en/guides/linking-channel-points-to-soundboard.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/docs/en/guides/linking-channel-points-to-soundboard.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/docs/en/guides/project-installation.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/docs/en/guides/project-installation.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/docs/en/guides/receive-client-id-and-secrets-from-twitch.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/docs/en/guides/receive-client-id-and-secrets-from-twitch.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/docs/en/guides/setting-up-manao.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/docs/en/guides/setting-up-manao.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/docs/en/guides/using-manaoweb.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/docs/en/guides/using-manaoweb.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/docs/en/guides/writing-your-first-custom-command.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/docs/en/guides/writing-your-first-custom-command.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/docs/en/index.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/docs/en/index.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/docs/en/kick/getting-started.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/docs/en/kick/getting-started.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/docs/en/kick/receive-kick-credentials.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/docs/en/kick/receive-kick-credentials.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/docs/en/user-guides/linking-your-account.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/docs/en/user-guides/linking-your-account.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/docs/guides/adding-custom-replies.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/docs/guides/adding-custom-replies.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/docs/guides/adding-overlays-in-obs.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/docs/guides/adding-overlays-in-obs.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/docs/guides/connecting-to-external-events.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/docs/guides/connecting-to-external-events.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/docs/guides/getting-started.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/docs/guides/getting-started.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/docs/guides/linking-channel-points-to-soundboard.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/docs/guides/linking-channel-points-to-soundboard.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/docs/guides/project-installation.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/docs/guides/project-installation.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/docs/guides/receive-client-id-and-secrets-from-twitch.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/docs/guides/receive-client-id-and-secrets-from-twitch.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/docs/guides/setting-up-manao.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/docs/guides/setting-up-manao.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/docs/guides/using-manaoweb.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/docs/guides/using-manaoweb.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/docs/guides/writing-your-first-custom-command.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/docs/guides/writing-your-first-custom-command.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/docs/index.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/docs/index.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/docs/kick/getting-started.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/docs/kick/getting-started.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/docs/kick/receive-kick-credentials.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/docs/kick/receive-kick-credentials.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/docs/kick/setup-ngrok.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/docs/kick/setup-ngrok.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/docs/user-guides/linking-your-account.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/docs/user-guides/linking-your-account.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/[lang]/commands/[...slug].astro" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/[lang]/commands/[...slug].astro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/commands/[...slug].astro" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/commands/[...slug].astro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/custom.css" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CopilotPersistence">
+    <persistenceIdMap>
+      <entry key="_/home/tinarskii/WebstormProjects/docs-v5" value="3AzE2OKfwTJoKSSrGyF9rDaqurg" />
+    </persistenceIdMap>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;tinarskii&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:mymanao/manao-wiki.git&quot;,
+    &quot;accountId&quot;: &quot;8ea704c7-b06e-4331-9935-eb4451f88b7b&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="3AzE2OKfwTJoKSSrGyF9rDaqurg" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;javascript.preferred.runtime.type.id&quot;: &quot;node&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/home/tinarskii/.local/share/JetBrains/Toolbox/apps/webstorm/plugins/javascript-plugin/jsLanguageServicesImpl/external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-WS-253.31033.133" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="46ba3656-0890-46e8-bc91-3f7304bafac5" name="Changes" comment="" />
+      <created>1773586793388</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1773586793388</updated>
+      <workItem from="1773586794614" duration="2000" />
+      <workItem from="1773587170616" duration="389000" />
+      <workItem from="1773587612367" duration="6471000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="github-copilot-workspace">
+    <instructionFileLocations>
+      <option value=".github/instructions" />
+    </instructionFileLocations>
+    <promptFileLocations>
+      <option value=".github/prompts" />
+    </promptFileLocations>
+  </component>
+</project>

@@ -2,203 +2,132 @@
 title: เขียนคำสั่งแรก
 ---
 
-ในระบบจัดการคำสั่งของ ManaoWeb สามารถเพิ่มคำสั่งที่สร้างขึ้นเองได้ ซึ่งอาจต้องใช้ทักษะการเขียนโปรแกรมพอสมควร แต่เราจะแนะนำในการเขียนคำสั่งแรกของ อาจต้องมีความรู้พื้นฐานเกี่ยวกับการเขียนโปรแกรมมาก่อน แต่ถ้าขี้เกียจ ก็แค่คัดลอกหน้านี้ทั้งหมดไปให้ ChatGPT ช่วยทำได้เลย
+ใน Dashboard สามารถเพิ่มคำสั่งที่สร้างขึ้นเองได้ผ่านหน้า **Custom Commands** โค้ดเขียนเป็น JavaScript และทำงานได้ทุกแพลตฟอร์มที่มะนาวรองรับในคราวเดียว
 
 :::tip
-เฉพาะ Twitch เท่านั้นที่สามารถสร้างคำสั่งผ่านหน้า Manao Dashboard ได้ในตอนนี้
-แพลตฟอร์มอื่น ๆ ต้องแก้ไขไฟล์ใน Manao โดยตรง
+คัดลอกหน้านี้ทั้งหมดไปให้ AI ช่วยเขียนได้เลย ไม่ต้องเขียนเองทุกอย่าง
 :::
 
------
+![](https://r2.otternoon.com/manao5-custom-command.png)
 
-### ฟังก์ชันและตัวแปรที่ใช้งานได้
+---
 
-วิธีการที่ ManaoBot จัดการกับคำสั่งที่ผู้ใช้สร้างขึ้นคือการรันโค้ดแบบไดนามิกภายในสภาพแวดล้อมที่ควบคุมไว้ซึ่งเรียกว่า "context" โดยเราได้เตรียมฟังก์ชันและตัวแปรที่เป็นประโยชน์ไว้ให้ใช้งานภายในโค้ด:
+### Context ที่ใช้งานได้
 
-**ฟังก์ชันที่ใช้งานได้**
-
-* **`say(text)`**: ส่งข้อความไปยังแชทของ Twitch
-* **`getBalance(userID)`**: ดูยอดเงินคงเหลือของผู้ใช้ที่ระบุ
-* **`getInput(order?)`**: ดึงข้อมูลที่ผู้ใช้พิมพ์เข้ามา (เช่น `!command bear fox dog` หากใช้ `getInput(1)` จะได้ค่า "bear") หรือจะคืนค่ามาเป็นข้อความหลังคำสั่งทั้งหมดหากไม่ระบุลำดับที่ (เช่น `!command bear fox dog` หากใช้ `getInput()` จะได้ค่า "bear fox dog") โดยลำดับจะเริ่มที่ 1
-* **`addBalance(userID, amount)`**: เพิ่มเงินให้กับผู้ใช้ตามจำนวนที่ระบุ
-* **`setBalance(userID, amount)`**: ตั้งค่าเงินของผู้ใช้ตามจำนวนที่ระบุ
-* **`subtractBalance(userID, amount)`**: หักเงินจากผู้ใช้ตามจำนวนที่ระบุ
-* **`initAccount(userID)`**: สร้างบัญชีธนาคารให้ผู้ใช้หากยังไม่มี
-
-**ตัวแปรที่ใช้งานได้**
-
-* **`client`**: ใช้สำหรับเข้าถึง ChatClient, ApiClient, และ Socket.IO Client, อ้างอิงจาก [ClientServices](https://github.com/tinarskii/manao/blob/main/types/index.d.ts#L41)
-* **`meta`**: ชุดข้อมูลที่เป็นประโยชน์ เช่น ข้อมูลผู้ใช้, อ้างอิงจาก [CommandMeta](https://github.com/tinarskii/manao/blob/main/types/index.d.ts#L47)
-* **`message`**: ข้อความทั้งหมดที่ได้รับจากแชท (เช่น `!command abc`)
-* **`args`**: array ของข้อมูลที่ผู้ใช้พิมพ์เข้ามา
-* **`language`**: ภาษาที่ใช้งานอยู่ (ค่าเริ่มต้นคือ en/th)
+มะนาวรัน custom command ในสภาพแวดล้อมที่มี `context` และ `args` ให้ใช้:
 
 ```ts
-export interface ClientServices {
-  chat: ChatClient;
-  io: SocketIOServer;
-  api: ApiClient;
-}
+// ข้อมูลผู้ใช้
+context.user.name                // ชื่อผู้ใช้
+context.user.id                  // Manao User ID (ใช้เชื่อมบัญชีข้ามแพลตฟอร์ม)
+context.user.platform            // แพลตฟอร์ม ("twitch" | "kick" | "discord" | "youtube")
+context.user.platformID          // User ID ของแพลตฟอร์มนั้น ๆ
+context.user.roles.isFollower
+context.user.roles.isSubscriber
+context.user.roles.isVIP
+context.user.roles.isModerator
+context.user.roles.isBroadcaster
 
-export interface CommandMeta {
-  user: string;
-  channel: string;
-  channelID: string;
-  userID: string;
-  commands: Map<string, Command>;
-  lang: Language;
-  currency: string;
-}
+// ข้อมูลทั่วไป
+context.channel                  // ชื่อช่อง
+context.language                 // ภาษาบอต ("en" | "th")
+context.currency                 // ชื่อสกุลเงิน
+
+// ส่งข้อความ
+await context.say("...")         // ส่งข้อความในแชท
+await context.reply("...")       // ตอบกลับพร้อมแท็กชื่อผู้ใช้
+await context.whisper("...")     // ส่งข้อความส่วนตัว (ถ้าแพลตฟอร์มรองรับ)
+
+// อื่น ๆ
+await context.lookupUser("name") // ค้นหา user จากชื่อ คืน id หรือ null
+context.emit("event", data)      // ส่ง event ไปยัง overlay
+
+// อาร์กิวเมนต์ที่ผู้ใช้พิมพ์มา
+args[0], args[1], ...            // เช่น !hello โลก → args[0] = "โลก"
 ```
 
------
+---
 
 ### การตอบกลับอย่างง่าย
 
-**`!hello [name]`**: ทักทายผู้ใช้ที่เรียกใช้คำสั่งนี้ หรือทักทายตามชื่อที่ระบุ
+**`!hello [name]`** — ทักทายผู้ใช้
 
 ```javascript
-let name = getInput(1) || `@${meta.user}`
-say(`สวัสดี ${name}!`)
+const name = args[0] || `@${context.user.name}`;
+await context.say(`สวัสดี ${name}!`);
 ```
 
-**`!roll`**: ทอยลูกเต๋า
+**`!roll`** — ทอยลูกเต๋า
 
 ```javascript
-let result = Math.ceil(Math.random() * 6)
-say(`ได้เลข: ${result}`)
+const result = Math.ceil(Math.random() * 6);
+await context.say(`🎲 ได้เลข: ${result}`);
 ```
 
-**`!dish`**: สุ่มรายชื่ออาหาร
+**`!dish`** — สุ่มรายชื่ออาหาร
 
 ```javascript
-let dishes = [
-"ข้าวกะเพรา",
-"ผัดไทย",
-"ข้าวซอย",
-"ข้าวเหนียวมะม่วง"
-]
-let dish = dishes[Math.floor(Math.random() * dishes.length)]
-say(`ได้: ${dish}!`)
+const dishes = ["ข้าวกะเพรา", "ผัดไทย", "ข้าวซอย", "ข้าวเหนียวมะม่วง"];
+const dish = dishes[Math.floor(Math.random() * dishes.length)];
+await context.say(`🍲 วันนี้กิน: ${dish}!`);
 ```
 
------
+---
 
 ### การจัดการยอดเงิน
 
-**`!transfer <user> <amount>`**: โอนเงินให้กับผู้ใช้ที่ระบุ (เป็นการดัดแปลงจากคำสั่งที่มีอยู่แล้ว)
+**`!transfer <user> <amount>`** — โอนเงินให้ผู้ใช้อื่น
 
 ```javascript
-(async() => {
-let targetName = getInput(1)
+const targetName = args[0];
+const amount = parseInt(args[1], 10);
 
-if (!targetName) {
-  say("ข้อผิดพลาด: ไม่ได้ระบุเป้าหมาย")
-  return
+if (!targetName || isNaN(amount) || amount <= 0) {
+  await context.reply("วิธีใช้: !transfer <ชื่อผู้ใช้> <จำนวน>");
+  return;
 }
 
-let target = await client.api.users.getUserByName(targetName)
-let amount = Number(getInput(2))
-
-if (Number.isNaN(amount)) {
-  say("ข้อผิดพลาด: จำนวนเงินไม่ถูกต้อง")
-  return
+const targetId = await context.lookupUser(targetName);
+if (!targetId) {
+  await context.reply(`ไม่พบผู้ใช้ ${targetName}`);
+  return;
 }
 
-if (!target) {
-  say("ข้อผิดพลาด: ไม่พบผู้ใช้เป้าหมาย")
-  return
-}
+// ใช้ context.emit เพื่อส่งข้อมูลไปยัง overlay หรือ event handler อื่น
+context.emit("transfer", {
+  from: context.user.id,
+  to: targetId,
+  amount,
+});
 
-let userBalance = getBalance(meta.userID)
-let targetBalance = getBalance(target.userID)
-
-if (amount > userBalance) {
-  say(`ข้อผิดพลาด: เงินไม่พอ ขาดอีก ${amount - userBalance} ${meta.currency}`)
-  return
-}
-
-initAccount(target.id)
-subtractBalance(meta.userID, amount)
-addBalance(target.id, amount)
-
-say(`โอนเงินจำนวน ${amount} ${meta.currency} จาก @${meta.user} ไปยัง @${targetName} สำเร็จแล้ว`)
-})()
+await context.reply(`โอน ${amount} ${context.currency} ให้ @${targetName} เรียบร้อย`);
 ```
 
------
+---
 
-### มินิเกมขั้นสูง
+### มินิเกม
 
-**`!rps <rock/paper/scissors>`**: เล่นเกมเป่ายิ้งฉุบ
+**`!rps <ค้อน/กระดาษ/กรรไกร>`** — เป่ายิ้งฉุบ
 
 ```javascript
-let choices = ["ค้อน", "กระดาษ", "กรรไกร"]
-let userChoice = getInput(1)?.toLowerCase()
+const map = { "ค้อน": "rock", "กระดาษ": "paper", "กรรไกร": "scissors" };
+const revMap = { "rock": "ค้อน", "paper": "กระดาษ", "scissors": "กรรไกร" };
+const choices = ["rock", "paper", "scissors"];
 
-if (userChoice === "ค้อน") userChoice = "rock"
-if (userChoice === "กระดาษ") userChoice = "paper"
-if (userChoice === "กรรไกร") userChoice = "scissors"
-
-let engChoices = ["rock", "paper", "scissors"]
-
-if (!userChoice || !engChoices.includes(userChoice)) {
-  say(`@${meta.user} วิธีใช้: !rps [ค้อน/กระดาษ/กรรไกร]`)
-  return
+const userChoice = map[args[0]];
+if (!userChoice) {
+  await context.reply("วิธีใช้: !rps [ค้อน/กระดาษ/กรรไกร]");
+  return;
 }
 
-let botChoice = engChoices[Math.floor(Math.random() * engChoices.length)]
-let result
-let userChoiceDisplay = userChoice
-let botChoiceDisplay = botChoice
-
-if (userChoiceDisplay === "rock") userChoiceDisplay = "ค้อน"
-if (userChoiceDisplay === "paper") userChoiceDisplay = "กระดาษ"
-if (userChoiceDisplay === "scissors") userChoiceDisplay = "กรรไกร"
-if (botChoiceDisplay === "rock") botChoiceDisplay = "ค้อน"
-if (botChoiceDisplay === "paper") botChoiceDisplay = "กระดาษ"
-if (botChoiceDisplay === "scissors") botChoiceDisplay = "กรรไกร"
-
-if (userChoice === botChoice) {
-  result = "เสมอ!"
-} else if (
+const botChoice = choices[Math.floor(Math.random() * choices.length)];
+let result = "เสมอ!";
+if (
   (userChoice === "rock" && botChoice === "scissors") ||
   (userChoice === "paper" && botChoice === "rock") ||
   (userChoice === "scissors" && botChoice === "paper")
-) {
-  result = "ชนะ!"
-} else {
-  result = "แพ้!"
-}
+) result = "ชนะ! 🎉";
+else if (userChoice !== botChoice) result = "แพ้! 😢";
 
-say(`✊✋✌️ เลือก ${userChoiceDisplay}, ฉันเลือก ${botChoiceDisplay}. ${result}`)
-```
-
------
-
-### การใช้งาน Twitch API
-
-**`!followage [user]`**: ตรวจสอบระยะเวลาที่ติดตาม
-
-```javascript
-(async() => {
-  let targetName = getInput(1) || meta.user
-  try {
-    let user = await client.api.users.getUserByName(targetName)
-    if (!user) {
-      say("ไม่พบผู้ใช้นี้")
-      return
-    }
-    let follow = await client.api.channels.getChannelFollowers(meta.channelID, user.id)
-    if (follow && follow.data.length > 0) {
-      let diffTime = Math.abs(new Date() - follow.data[0].followDate);
-      let diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24)); 
-      say(`@${targetName} ติดตามมาเป็นเวลา: ${diffDays} วัน`)
-    } else {
-      say(`@${targetName} ยังไม่ได้ติดตาม`)
-    }
-  } catch(e) {
-    say("ไม่สามารถดึงข้อมูลการติดตามได้")
-  }
-})()
+await context.say(`✊✋✌️ ${context.user.name} เลือก ${args[0]}, บอตเลือก ${revMap[botChoice]}. ${result}`);
 ```

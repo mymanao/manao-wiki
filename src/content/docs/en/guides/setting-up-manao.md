@@ -1,55 +1,45 @@
 ---
-title: Configure Manao
+title: Setting up Manao
 ---
 
-Setting up **Manao** is easier than peeling a banana. A slightly spiky banana, maybe — but still easy 🙂
+After installing Manao, open the **Manao Setup** program. A browser window will open prompting you to enter the information needed to run Manao.
 
-Before we start, you must run the `ManaoBot Setup` file on your Desktop and follow the instructions below!
-
----
-
-### Configure Client ID and Client Secret
-
-First, the system will ask which language you want to use (English/Thai).  
-Use the arrow keys to select a language, then press `Enter` to confirm.
-
-Next, you’ll see step-by-step instructions explaining how to obtain your **Client ID** and **Client Secret**.
-
-If you’ve already read [this guide](/guides/retrieve-client-id-and-secrets-from-twitch),  
-you can skip this part by typing `n` and pressing `Enter`.
-
-There will be another confirmation screen — just press `Enter` to continue.
-
-Then, the system will ask for your **Twitch Client ID**.  
-Paste your Client ID into the terminal and press `Enter`.
-
-After that, do the same for your **Client Secret**.
+![](https://r2.otternoon.com/manao5-setup.png)
 
 ---
 
-### Log in to Twitch
+### Twitch Page
 
-When you see the message:
+Enter your **Client ID** and **Client Secret** from the [Twitch Developer Portal](/en/guides/receive-client-id-and-secrets-from-twitch), then:
 
-`To continue, please login to your BOT Twitch account (the secondary account for the bot)`
+1. Click **Authorize Bot Account** — a browser window will open to the Twitch login page. Sign in with the secondary account you want to use as the bot (any account with 2FA enabled).
+2. Click **Authorize Broadcaster Account** — same as above, but sign in with your main streaming account (you can use the same account if you want, but you'll need to log in twice).
+3. Once both accounts show ✅, click **Next**.
 
-It means your Client ID and Client Secret were entered correctly.
-
-If you already have a separate account for the bot (it can be any account),  
-switch to that account in your browser before pressing `Enter`.
-
-If you don’t have a separate bot account yet,  
-you can temporarily use your main broadcaster account without logging out.
-
-After authorizing the bot account, you’ll see another message:
-
-`To continue, please login to your BROADCASTER Twitch account (the primary account for streaming)`
-
-Switch back to your main broadcaster account.  
-If you're using the same account for both bot and broadcaster, you don’t need to do anything — just press `Enter` to authorize again.
+:::tip
+You can use the same account for both bot and broadcaster.
+:::
 
 ---
 
-### Final Step of Installation
+### Discord Page
 
-Once everything is done, you can open the bot from the ManaoBot icon on your Desktop!
+Read more at [Manao with Discord](/en/discord/getting-started). If you're not using Discord, just skip this page.
+
+---
+
+### Kick Page
+
+Read more at [Manao with Kick](/en/kick/getting-started). If you're not using Kick, just skip this page.
+
+---
+
+### YouTube Page
+
+Read more at [Manao with YouTube](/en/youtube/getting-started). If you're not using YouTube, just skip this page.
+
+---
+
+### Done!
+
+Once everything is set up, close the program and launch Manao — you're good to go!

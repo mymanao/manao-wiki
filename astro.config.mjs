@@ -47,7 +47,7 @@ export default defineConfig({
                   slug: 'guides/getting-started'
                 },
                 {
-                  label: 'Receive Client id and Secrets from Twitch',
+                  label: 'Receive Client ID and Secrets from Twitch',
                   translations: { th: "รับไคล์แอนต์ไอดีและซีเครทจากทวิช" },
                   slug: 'guides/receive-client-id-and-secrets-from-twitch'
                 },
@@ -68,8 +68,8 @@ export default defineConfig({
               translations: { th: "การใช้งานพื้นฐาน" },
               items: [
                 {
-                  label: 'Using ManaoWeb',
-                  translations: { th: "เริ่มใช้งานมะนาวเว็บ" },
+                  label: 'Using the Dashboard',
+                  translations: { th: "เริ่มใช้งาน Dashboard" },
                   slug: 'guides/using-manaoweb'
                 },
                 {
@@ -122,7 +122,7 @@ export default defineConfig({
                 },
                 {
                   label: 'Receive Discord Credentials',
-                  translations: { th: "รับโทเค็นและไอดีไคล์เอนต์ของบอต" },
+                  translations: { th: "รับ Bot Token จาก Discord" },
                   slug: 'discord/receive-discord-credentials'
                 },
                 {
@@ -153,6 +153,22 @@ export default defineConfig({
                 },
               ]
             },
+            {
+              label: 'YouTube Integration',
+              translations: { th: "มะนาวกับ YouTube" },
+              items: [
+                {
+                  label: 'Getting Started',
+                  translations: { th: "มาเริ่มกันเถอะ" },
+                  slug: 'youtube/getting-started'
+                },
+                {
+                  label: 'Receive YouTube Credentials',
+                  translations: { th: "รับข้อมูลจาก Google Cloud" },
+                  slug: 'youtube/receive-youtube-credentials'
+                },
+              ]
+            },
           ],
         },
 
@@ -178,24 +194,6 @@ export default defineConfig({
             },
           ]
         },
-        //
-        // {
-        //   label: 'Developer Guide',
-        //   translations: { th: "คู่มือสำหรับนักพัฒนา" },
-        //   items: [
-        //     {
-        //       label: '@manaobot/kickit',
-        //       translations: { th: "@manaobot/kickit" },
-        //       items: [
-        //         {
-        //           label: 'Getting Started',
-        //           translations: { th: "มาเริ่มกันเถอะ" },
-        //           slug: 'dev/kickit/getting-started'
-        //         }
-        //       ]
-        //     },
-        //   ]
-        // }
       ],
     }),
   ],

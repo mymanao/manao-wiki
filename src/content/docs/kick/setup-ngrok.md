@@ -38,9 +38,9 @@ title: ตั้งค่า Ngrok
 
 จะเห็นหน้าตาประมาณนี้
 
-![](https://github.com/user-attachments/assets/fb961566-04a8-4bba-9edc-2a0a3acb429e)
+![](https://r2.otternoon.com/manao5-ngrok.png)
 
-ให้ก๊อปตรงช่อง "Domain" มา (ในรูปคือ `nondiffractively-interungular-angeles.ngrok-free.dev`)
+ให้ก๊อปตรงช่อง "Domain" มา (ในรูปคือ `topical-goshawk-leading.ngrok-free.app`)
 นี่คือค่า NGROK_DOMAIN
 
 ---

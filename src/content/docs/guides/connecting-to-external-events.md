@@ -2,78 +2,53 @@
 title: เชื่อมต่อกับอีเวนต์ภายนอก
 ---
 
-Manao สามารถเชื่อมต่อกับอีเวนต์ภายนอกที่คุยกันผ่าน Socket.IO ได้ผ่านคำสั่ง
-`!event` ซึ่งสามารถใช้ได้ตั้งแต่ Manao เวอร์ชัน 3.1.x เป็นต้นไป ถามว่ามีประโยชน์ยังไง?
-ง่าย ๆ เลยคือ **"เว็บไซต์หรือแอปพลิเคชันอื่น ๆ สามารถรับ-ส่งข้อมูลกับ Manao ได้แบบเรียลไทม์"**
+มะนาวสามารถเชื่อมต่อกับอีเวนต์ภายนอกที่คุยกันผ่าน Socket.IO ได้ผ่านคำสั่ง `!event` ง่าย ๆ เลยคือ **เว็บไซต์หรือแอปพลิเคชันอื่น ๆ สามารถรับ-ส่งข้อมูลกับมะนาวได้แบบเรียลไทม์**
+
+---
 
 ### คำสั่งพื้นฐาน
 
-เราสามารถเชื่อมต่อกับ Socket.IO เซิร์ฟเวอร์ใด ๆ ก็ได้ผ่านคำสั่งต่อไปนี้:
+เชื่อมต่อกับ Socket.IO server ใด ๆ ก็ได้:
 
-```text
+```
 !event connect <URL>
 ```
 
-ตัวอย่างเช่น:
+ตัวอย่าง:
 
-```text
-!event connect https://nhendle-server.fly.io/?session=RANDOM_SESSION_ID
+```
+!event connect https://example.fly.io/?session=RANDOM_SESSION_ID
 ```
 
-เมื่อเชื่อมต่อสำเร็จ Manao จะส่งข้อความยืนยันในแชท:
+เมื่อเชื่อมต่อสำเร็จ มะนาวจะส่งข้อความยืนยันในแชท ตัดการเชื่อมต่อด้วย:
 
-```text
-Event initiated
 ```
-
-หากต้องการตัดการเชื่อมต่อจากเซิร์ฟเวอร์ ให้ใช้คำสั่ง:
-
-```text
 !event disconnect
 ```
 
-เมื่อถอดการเชื่อมต่อสำเร็จ Manao จะส่งข้อความยืนยันในแชท:
+---
 
-```text
-Event disconnected
-```
+### สำหรับผู้พัฒนา
 
-### สำหรับผู้พัฒนา: การส่งและรับอีเวนต์
-
-Manao ส่งและรับอีเวนต์ผ่าน Socket.IO และสามารถรองรับ **session-bound** หรือ **neutral mode** ดังนี้:
+มะนาวส่งและรับ event ผ่าน Socket.IO รองรับทั้ง **session-bound** และ **neutral mode**:
 
 ```typescript
 socket.on("connect", () => {
-try {
-const parsed = new URL(url);
-const sessionId = parsed.searchParams.get("session");
+  const parsed = new URL(url);
+  const sessionId = parsed.searchParams.get("session");
 
-    // ถ้ามี sessionId จะเข้าห้อง session-bound
-    if (sessionId) {
-      socket.emit("session:join", {
-        sessionId,
-        role: "manao",
-      });
-      logger.info(`[Event] Connected in session mode: \${sessionId}`);
-    } else {
-      // ถ้าไม่มี sessionId จะเป็น neutral mode
-      logger.info("[Event] Connected in neutral mode");
-    }
-
-    send("Event initiated!");
-} catch (err) {
-logger.error(`[Event] Failed to parse URL: \${err}`);
-send("Error: Invalid URL provided");
-}
+  if (sessionId) {
+    // session-bound mode
+    socket.emit("session:join", { sessionId, role: "manao" });
+  }
+  // ถ้าไม่มี sessionId จะเป็น neutral mode
 });
 ```
 
-Manao จะส่งอีเวนต์ `session:join` ให้กับเซิร์ฟเวอร์เมื่อมี Session ID เพื่อระบุว่าเป็นการเชื่อมต่อจาก Manao
+**Event ที่มะนาวรับจากเซิร์ฟเวอร์:**
+- `event:start`, `{ filter?: string }` — เริ่มส่งข้อความไปยังเซิร์ฟเวอร์
+- `event:stop` — หยุดส่งข้อความ
+- `event:send`, `{ message: string }` — สั่งให้มะนาวส่งข้อความในแชท
 
-### อีเวนต์ที่ Manao สามารถรับจากเซิร์ฟเวอร์
-- `event:start`, { filter?: string }: เริ่มส่งข้อความไปยังเซิร์ฟเวอร์ตาม filter (ถ้ามี)
-- `event:stop`: หยุดการส่งข้อความไปยังเซิร์ฟเวอร์
-- `event:send`, { message: string }: ส่งข้อความที่ระบุไปยังแชทของ Twitch
-
-### อีเวนต์ที่เซิร์ฟเวอร์สามารถรับจาก Manao
-- `event:input`, { message: string, user: string }: เซิร์ฟเวอร์จะได้รับข้อความที่ผู้ใช้พิมพ์ในแชทของ Twitch พร้อมชื่อผู้ใช้
+**Event ที่เซิร์ฟเวอร์รับจากมะนาว:**
+- `event:input`, `{ message: string, user: string }` — ข้อความที่ผู้ใช้พิมพ์ในแชทพร้อมชื่อผู้ใช้

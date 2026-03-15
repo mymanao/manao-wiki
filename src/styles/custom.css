@@ -1,5 +1,22 @@
 :root {
   --sl-font: 'Sarabun', sans-serif;
+  --sl-color-accent-low: #1a3300;
+  --sl-color-accent: #69F000;
+  --sl-color-accent-high: #b3ff66;
+  --sl-color-white: #ffffff;
+  --sl-color-gray-1: #eceef2;
+  --sl-color-gray-2: #c0c2c7;
+  --sl-color-gray-3: #888b96;
+  --sl-color-gray-4: #545861;
+  --sl-color-gray-5: #353841;
+  --sl-color-gray-6: #24272f;
+  --sl-color-black: #17181c;
+}
+
+:root[data-theme='light'] {
+  --sl-color-accent-low: #d4f5a0;
+  --sl-color-accent: #4a9900;
+  --sl-color-accent-high: #2d6600;
 }
 
 .sidebar, .header, h1, h2, nav {
@@ -11,6 +28,7 @@
   align-items: center;
   justify-content: center;
   gap: 12px;
+  margin: 1.5rem 0;
 }
 
 .sponsor-avatars img {
@@ -20,17 +38,10 @@
   object-fit: cover;
   border: 3px solid var(--sl-color-bg);
   transition: transform 0.2s ease;
-}
-
-.sponsor-avatars img:first-child {
-  margin-left: 0;
+  box-shadow: 0 0 0 2px var(--sl-color-accent);
 }
 
 .sponsor-avatars img:hover {
   transform: translateY(-4px);
   z-index: 10;
-}
-
-.sponsor-avatars img {
-  box-shadow: 0 0 0 2px var(--sl-color-accent);
 }

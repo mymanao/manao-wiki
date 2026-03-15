@@ -2,24 +2,31 @@
 title: เพิ่มโอเวอร์เลย์ใน OBS
 ---
 
-หลังจากตั้งค่าและรัน **ManaoBot** เสร็จแล้ว ก็ถึงเวลามาเพิ่ม **overlay** สวย ๆ ลงใน OBS เพื่อให้สตรีมดูเท่ขึ้นได้เลย
-คำสั่งหลายอย่างของบอทก็เชื่อมกับ overlay ด้วย เช่นคำสั่ง `!nickname` ที่ให้ผู้ชมตั้งชื่อเล่นในกล่องแชทได้โดยตรง
+หลังจากรัน **ManaoBot** เสร็จแล้ว ก็ถึงเวลามาเพิ่ม overlay ลงใน OBS เพื่อให้สตรีมดูเท่ขึ้นได้เลย
+คำสั่งหลายอย่างของบอตก็เชื่อมกับ overlay ด้วย เช่นคำสั่ง `!nickname` ที่ให้ผู้ชมตั้งชื่อเล่นในกล่องแชทได้โดยตรง
+
+![](https://r2.otternoon.com/manao5-customize-overlay.png)
 
 ---
 
-### เปิด OBS หรือ Streamlabs
+### ประเภทของ Overlay ที่ใช้ได้
 
-เปิด **OBS Studio** หรือ **Streamlabs** แล้วไปที่ซีนที่อยากเพิ่ม overlay
-ถ้าอยากแยก overlay ไว้เป็นระเบียบหน่อย ก็สร้างซีนใหม่ได้เลย
-จะใช้โปรแกรมอื่นอย่าง **Xsplit Broadcaster** ก็ได้เหมือนกัน
+| Overlay        | URL                              | รายละเอียด                                                  |
+|:---------------|:---------------------------------|:------------------------------------------------------------|
+| Chat Overlay   | `/overlay/chat`                  | แสดงข้อความแชทจากทุกแพลตฟอร์มแบบตกแต่งสวยงาม               |
+| Feed Overlay   | `/overlay/feed`                  | แสดงเหตุการณ์ในช่อง เช่น การติดตามใหม่ เงินเข้าเงินออก ฯลฯ |
+| Sound Overlay  | `/overlay/sound`                 | เล่นเสียงจาก Soundboard                                     |
+| Music Overlay  | `/overlay/music`                 | แสดงเพลงที่กำลังเล่นอยู่                                    |
+
+URL เต็มจะเป็น `http://[local-ip]:4600/overlay/chat` เป็นต้น (ให้ก๊อปปี้จาก Browser มาได้เลย)
 
 ---
 
-### เพิ่ม Browser Source
+### เพิ่ม Browser Source ใน OBS
 
 1. ที่แถบ **Sources** กดปุ่ม **+**
 2. เลือก **Browser**
-3. ตั้งชื่อ source เช่น `Chat Overlay`, `Alert Overlay` หรือ `Music Overlay`
+3. ตั้งชื่อ source เช่น `Chat Overlay` หรือ `Music Overlay`
 4. กด **OK**
 
 ---
@@ -28,95 +35,47 @@ title: เพิ่มโอเวอร์เลย์ใน OBS
 
 จะมีหน้าต่าง properties โผล่มา ให้ตั้งค่าตามนี้
 
-* **URL:**
-  ใส่ URL ของ overlay ถ้ารัน ManaoBot อยู่ในเครื่องตัวเอง ให้ใช้ลิงก์ประมาณนี้
-
-  ```
-  http://localhost:3000/overlay/chat
-  ```
-
-  หรือสำหรับ overlay อื่น ๆ
-
-  ```
-  http://localhost:3000/soundboard/player
-  http://localhost:3000/overlay/music
-  http://localhost:3000/overlay/feed
-  ```
-
-* **Width / Height:**
-  ปรับขนาดให้พอดีกับหน้าจอที่ต้องการ
-  (สำหรับ Soundboard Player จะไม่เห็นทั้งหน้าอยู่แล้ว ขนาดเลยไม่ค่อยมีผล)
-
-* **Shutdown source when not visible:**
-  แนะนำให้ **ไม่ติ๊ก** เพื่อให้ overlay ยังเชื่อมต่ออยู่แม้จะซ่อน
-
-* **Refresh browser when scene becomes active:**
-  ให้ **ติ๊กไว้** เพื่อให้ overlay โหลดใหม่อัตโนมัติเมื่อ OBS เปิดขึ้น
+- **URL:** ใส่ URL ของ overlay เช่น `http://localhost:4600/overlay/chat`
+- **Width / Height:** ปรับขนาดให้พอดีกับหน้าจอที่ต้องการ
+- **Shutdown source when not visible:** แนะนำให้ **ไม่ติ๊ก** เพื่อให้ overlay ยังเชื่อมต่ออยู่แม้จะซ่อน
+- **Refresh browser when scene becomes active:** ให้ **ติ๊กไว้** เพื่อให้ overlay โหลดใหม่อัตโนมัติ
 
 :::tip
-ไม่ต้องติ๊ก “Control audio via OBS” สำหรับ overlay เพลงหรือ soundboard เพราะสามารถควบคุมเสียงได้จากหน้าเว็บโดยตรง (ดูได้ในหัวข้อ [ใช้ปุ่ม Interact](#5-ใช้ปุ่ม-Interact))
+ไม่ต้องติ๊ก "Control audio via OBS" สำหรับ overlay เพลงหรือ soundboard เพราะควบคุมเสียงได้จากหน้าเว็บโดยตรง
 :::
-
-เสร็จแล้วกด **OK**
 
 ---
 
-### จัดตำแหน่งและปรับขนาด
+### ปรับแต่ง Overlay
 
-หลังจากเพิ่มเสร็จ จะเห็น overlay โผล่มาในหน้าพรีวิวของซีน
-สามารถ:
+สามารถปรับแต่งหน้าตา overlay ได้จากหน้า **Overlay Settings** ใน Dashboard ที่ `http://localhost:4600/customize/overlay`
 
-* ลากไปวางตรงไหนก็ได้
-* ปรับขนาดให้พอดีกับกล่องแชทหรือพื้นที่แจ้งเตือน
-* คลิกขวา → **Transform → Fit to Screen** เพื่อให้เต็มจอ
-
-ถ้า overlay ไม่ขึ้นทันที ลองเช็กว่าบอทรันอยู่หรือยัง แล้วคลิกขวาที่ overlay → **Refresh Browser Source**
-อย่าลืมว่า URL ต้องเป็น `http` ไม่ใช่ `https` ถ้ารันอยู่ในเครื่อง
+- **Chat Overlay**: มี theme ให้เลือก ได้แก่ Manao v5, Manao Classic และ Lucian รวมถึงปรับสีพื้นหลัง ฟอนต์ ขนาด animation และ custom CSS ได้
+- **Music Overlay**: เลือก theme และปรับสี accent, พื้นหลัง, ฟอนต์ และตำแหน่ง (มุมซ้าย/ขวา บน/ล่าง)
 
 ---
 
 ### ใช้ปุ่ม Interact
 
-overlay บางตัวจะต้องกดโต้ตอบก่อนถึงจะเริ่มทำงานได้ เช่น **Music Player** กับ **Soundboard Player**
-สาเหตุเพราะ [นโยบาย autoplay](https://developer.chrome.com/blog/autoplay/) ของเบราว์เซอร์ที่บล็อกเสียงอัตโนมัติ
+Sound Overlay ต้องกดโต้ตอบก่อนถึงจะเล่นเสียงได้ เพราะ[นโยบาย autoplay](https://developer.chrome.com/blog/autoplay/) ของเบราว์เซอร์
 
-วิธีเปิดให้เล่นเสียงได้:
-
-1. ใน OBS คลิกขวาที่ overlay (เช่น `Music Overlay`)
+1. ใน OBS คลิกขวาที่ Sound Overlay
 2. เลือก **Interact**
-   จะมีหน้าต่างเบราว์เซอร์เล็ก ๆ โผล่ขึ้นมา
-3. โต้ตอบกับหน้านั้น
+3. กด **Unmute** ในหน้าต่างที่โผล่มา แล้วปิดหน้าต่างได้เลย
 
-  * สำหรับ Music Overlay: ควบคุมเพลงได้จาก YouTube iFrame ถ้าอยากซ่อน iFrame ให้คลิกที่ **การ์ดเพลง** ด้านล่าง
-  * สำหรับ Soundboard Player: กด **Unmute** แล้วเลือกเสียงหรือปรับระดับเสียง จากนั้นกด “Hide” เพื่อซ่อนหน้าได้
+หรือสามารถใช้กับ Music Overlay ก็ได้ เพื่อควบคุมเสียงหรือหยุดเพลงได้
 
----
-
-### ประเภทของ Overlay ที่ใช้ได้
-
-ตอนนี้ ManaoBot รองรับ overlay หลายแบบ ได้แก่:
-
-| Overlay            | URL                  | รายละเอียด                                                 |
-|--------------------|----------------------|------------------------------------------------------------|
-| Chat Overlay       | `/overlay/chat`      | แสดงข้อความแชทจาก Twitch แบบตกแต่งสวยงาม                   |
-| Feed Overlay       | `/overlay/feed`      | แสดงเหตุการณ์ในช่อง เช่น การติดตามใหม่ เงินเข้าเงินออก ฯลฯ |
-| Soundboard Overlay | `/soundboard/player` | เล่นเสียงจาก Soundboard Controller                         |
-| Music Overlay      | `/overlay/music`     | เล่นเพลงที่ขอผ่าน YouTube                                  |
+1. คลิกขวาที่ Music Overlay
+2. เลือก **Interact**
+3. กดที่การ์ดเพลง จะมีตัวควบคุมขึ้นมาด้านล่าง
+4. ปรับเสียง/หยุด/ข้ามเพลงได้ตามต้องการ
+5. กดที่การ์ดเพลงอีกรอบเพื่อซ่อน
 
 ---
 
-### ถ้ามีปัญหา Overlay ไม่ขึ้น
+### ถ้า Overlay ไม่ขึ้น
 
-1. ตรวจสอบว่า **ManaoBot** และ **ManaoWeb** รันอยู่ (ลองเปิด `http://localhost:3000` ในเบราว์เซอร์ดู)
+1. ตรวจสอบว่า **ManaoBot** รันอยู่ (ลองเปิด `http://localhost:4600` ในเบราว์เซอร์ดู)
 2. ตรวจสอบว่า URL ใน OBS ตรงกับ overlay ที่ใช่
-3. ลองรีเฟรช overlay หรือรีสตาร์ต OBS
-4. ถ้ามีไฟร์วอลล์หรือแอนติไวรัส อาจต้องตรวจสอบว่าไม่ได้บล็อกการเชื่อมต่อภายในเครื่อง
-
----
-
-### เคล็ดลับเล็ก ๆ
-
-* สามารถทำหลายซีนเพื่อใช้ overlay ต่างรูปแบบกันได้
-* ถ้าอยากเปลี่ยนฟอนต์ สี หรือเลย์เอาต์ ของ overlay สามารถแก้ไฟล์ CSS ได้ใน
-  `ManaoBot/server/public/styles/chat.css`
-* ก่อนใช้ Music Overlay หรือ Soundboard Player อย่าลืมกด **Interact** กับหน้าเว็บก่อนทุกครั้ง
+3. ลองรีเฟรช overlay โดยคลิกขวา → **Refresh Browser Source**
+4. ถ้ามีไฟร์วอลล์หรือแอนติไวรัส อาจต้องอนุญาตการเชื่อมต่อภายในเครื่อง
