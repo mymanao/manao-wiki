@@ -5,7 +5,7 @@ import starlightLlmsTxt from "starlight-llms-txt";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://manaobot.netlify.app/",
+  site: "https://manao.otternoon.com/",
   integrations: [
     starlight({
       title: 'Manao',

@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="46ba3656-0890-46e8-bc91-3f7304bafac5" name="Changes" comment="fix: fetch URL">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="46ba3656-0890-46e8-bc91-3f7304bafac5" name="Changes" comment="fix: change repo URL">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/content/docs/en/index.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/docs/en/index.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/content/docs/index.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/docs/index.mdx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +75,8 @@
       <workItem from="1773586794614" duration="2000" />
       <workItem from="1773587170616" duration="389000" />
       <workItem from="1773587612367" duration="7292000" />
-      <workItem from="1773595103033" duration="97000" />
+      <workItem from="1773595103033" duration="166000" />
+      <workItem from="1773699981841" duration="47000" />
     </task>
     <task id="LOCAL-00001" summary="feat: v5">
       <option name="closed" value="true" />
@@ -104,7 +102,15 @@
       <option name="project" value="LOCAL" />
       <updated>1773594896630</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="fix: change repo URL">
+      <option name="closed" value="true" />
+      <created>1773595252955</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1773595252956</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -113,7 +119,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat: v5" />
     <MESSAGE value="fix: fetch URL" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: fetch URL" />
+    <MESSAGE value="fix: change repo URL" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: change repo URL" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>
