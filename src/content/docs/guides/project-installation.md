@@ -12,10 +12,10 @@ title: ติดตั้งโปรเจกต์
 
 ### ดาวน์โหลดตัวติดตั้ง
 
-| OS      | Download link |
-|:--------|:--------------|
-| Windows | [manao-installer-windows-x64.exe](https://gitlab.com/mymanao/installer/-/jobs/artifacts/v1.1.0/raw/dist/manao-installer-windows-amd64.exe?job=build:windows) |
-| Linux   | [manao-installer-linux-x64](https://gitlab.com/mymanao/installer/-/jobs/artifacts/v1.1.0/raw/dist/manao-installer-linux-amd64?job=build:linux) |
+| OS      | Download link                                                                                                                                                |
+|:--------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Windows | [manao-installer-windows-x64.exe](https://gitlab.com/mymanao/installer/-/jobs/artifacts/v1.2.0/raw/dist/manao-installer-windows-amd64.exe?job=build:windows) |
+| Linux   | [manao-installer-linux-x64](https://gitlab.com/mymanao/installer/-/jobs/artifacts/v1.2.0/raw/dist/manao-installer-linux-amd64?job=build:linux)               |
 
 ตัวติดตั้ง Manao เป็นโปรแกรม Open Source ซึ่งสามารถตรวจสอบโค้ดได้ที่ [GitLab Repository](https://gitlab.com/mymanao/installer) 
 

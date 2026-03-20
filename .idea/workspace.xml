@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="46ba3656-0890-46e8-bc91-3f7304bafac5" name="Changes" comment="fix: change repo URL">
+    <list default="true" id="46ba3656-0890-46e8-bc91-3f7304bafac5" name="Changes" comment="fix: update site URL in configuration">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -77,6 +77,7 @@
       <workItem from="1773587612367" duration="7292000" />
       <workItem from="1773595103033" duration="166000" />
       <workItem from="1773699981841" duration="47000" />
+      <workItem from="1773769561907" duration="1394000" />
     </task>
     <task id="LOCAL-00001" summary="feat: v5">
       <option name="closed" value="true" />
@@ -110,7 +111,15 @@
       <option name="project" value="LOCAL" />
       <updated>1773595252956</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="fix: update site URL in configuration">
+      <option name="closed" value="true" />
+      <created>1773769591237</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1773769591237</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -120,7 +129,8 @@
     <MESSAGE value="feat: v5" />
     <MESSAGE value="fix: fetch URL" />
     <MESSAGE value="fix: change repo URL" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: change repo URL" />
+    <MESSAGE value="fix: update site URL in configuration" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: update site URL in configuration" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

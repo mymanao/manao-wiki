@@ -14,8 +14,8 @@ Manao is **free**. If someone is selling it, do not buy it! Only download from t
 
 | OS      | Download link |
 |:--------|:--------------|
-| Windows | [manao-installer-windows-x64.exe](https://gitlab.com/mymanao/installer/-/jobs/artifacts/v1.1.0/raw/dist/manao-installer-windows-amd64.exe?job=build:windows) |
-| Linux   | [manao-installer-linux-x64](https://gitlab.com/mymanao/installer/-/jobs/artifacts/v1.1.0/raw/dist/manao-installer-linux-amd64?job=build:linux) |
+| Windows | [manao-installer-windows-x64.exe](https://gitlab.com/mymanao/installer/-/jobs/artifacts/v1.2.0/raw/dist/manao-installer-windows-amd64.exe?job=build:windows) |
+| Linux   | [manao-installer-linux-x64](https://gitlab.com/mymanao/installer/-/jobs/artifacts/v1.2.0/raw/dist/manao-installer-linux-amd64?job=build:linux) |
 
 The Manao installer is open source — you can check the code at the [GitLab Repository](https://gitlab.com/mymanao/installer).
 
