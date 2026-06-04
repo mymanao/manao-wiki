@@ -4,18 +4,42 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="46ba3656-0890-46e8-bc91-3f7304bafac5" name="Changes" comment="fix: update site URL in configuration">
+    <list default="true" id="46ba3656-0890-46e8-bc91-3f7304bafac5" name="Changes" comment="fix: update download links to version 1.2.0 in installation documentation">
+      <change afterPath="$PROJECT_DIR$/src/content/docs/paymoi/guides.mdx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/astro.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/astro.config.mjs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CopilotChats">
+    <option name="panelChat">
+      <chat>
+        <option name="activeSessionId" value="730fe1ec-cc80-4b1b-980c-989f2017725c" />
+        <option name="sessions">
+          <session>
+            <option name="chatType" value="PANEL" />
+            <option name="id" value="730fe1ec-cc80-4b1b-980c-989f2017725c" />
+            <option name="modeId" value="Agent" />
+            <option name="modelType" value="builtin_family" />
+            <option name="modelValue" value="auto" />
+            <option name="targetType" value="LOCAL" />
+          </session>
+        </option>
+        <option name="type" value="PANEL" />
+      </chat>
+    </option>
+  </component>
   <component name="CopilotPersistence">
     <persistenceIdMap>
+      <entry key="_/home/tin/WebstormProjects/docs-v5" value="3EfyGa50bBMA60NkmbBf20Be7db" />
       <entry key="_/home/tinarskii/WebstormProjects/docs-v5" value="3AzE2OKfwTJoKSSrGyF9rDaqurg" />
     </persistenceIdMap>
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="74" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -32,6 +56,69 @@
     &quot;accountId&quot;: &quot;8ea704c7-b06e-4331-9935-eb4451f88b7b&quot;
   }
 }</component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.0398604768081894" />
+      <entry key="MS500" value="1.7827768079406565" />
+      <entry key="S2" value="3.340783001649128" />
+      <entry key="S5" value="4.556767055386833" />
+      <entry key="S10" value="5.252837805031435" />
+      <entry key="S30" value="9.54410563340397" />
+      <entry key="S60" value="21.206307168044834" />
+      <entry key="M2" value="47.22738568578912" />
+      <entry key="M5" value="114.84261145788678" />
+      <entry key="M10" value="199.1129695808164" />
+      <entry key="M15" value="259.7999177548708" />
+      <entry key="M30" value="376.09820307527167" />
+      <entry key="H1" value="484.93472531306014" />
+      <entry key="H2" value="564.2398630431763" />
+      <entry key="H4" value="612.8826385762668" />
+      <entry key="D1" value="659.0723836987626" />
+      <entry key="W1" value="667.566902670514" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="1.2941503095055938E-139" />
+      <entry key="S2" value="1.89668923868035E-35" />
+      <entry key="S5" value="1.2918095001461911E-14" />
+      <entry key="S10" value="1.1366556281353664E-7" />
+      <entry key="S30" value="0.0050419755605978465" />
+      <entry key="S60" value="0.08367100061920675" />
+      <entry key="M2" value="0.3830604140965234" />
+      <entry key="M5" value="1.065522683951879" />
+      <entry key="M10" value="1.6655578515013838" />
+      <entry key="M15" value="2.0329484528319157" />
+      <entry key="M30" value="2.657600683377514" />
+      <entry key="H1" value="3.1834808936148993" />
+      <entry key="H2" value="3.544075405025253" />
+      <entry key="H4" value="3.7582786642422104" />
+      <entry key="D1" value="3.957620450756187" />
+      <entry key="W1" value="3.9938919677669436" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="0.5563644905258238" />
+      <entry key="MS500" value="1.3182713699716746" />
+      <entry key="S2" value="2.9327865770488946" />
+      <entry key="S5" value="4.2957752582363105" />
+      <entry key="S10" value="5.094325980999064" />
+      <entry key="S30" value="9.45981369619911" />
+      <entry key="S60" value="21.198817699199807" />
+      <entry key="M2" value="47.51187604315535" />
+      <entry key="M5" value="115.80897675487189" />
+      <entry key="M10" value="200.6888195439524" />
+      <entry key="M15" value="261.75292619284835" />
+      <entry key="M30" value="378.6956380144873" />
+      <entry key="H1" value="488.07829648645424" />
+      <entry key="H2" value="567.7603297149318" />
+      <entry key="H4" value="616.6279810196521" />
+      <entry key="D1" value="663.0276678958054" />
+      <entry key="W1" value="671.5604561382553" />
+    </decayedShown>
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
@@ -40,28 +127,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;javascript.preferred.runtime.type.id&quot;: &quot;node&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/home/tinarskii/.local/share/JetBrains/Toolbox/apps/webstorm/plugins/javascript-plugin/jsLanguageServicesImpl/external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "main",
+    "javascript.preferred.runtime.type.id": "node",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "/home/tin/WebstormProjects/docs-v5",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "to.speed.mode.migration.done": "true",
+    "ts.external.directory.path": "/home/tin/Downloads/WebStorm-2026.1.2/WebStorm-261.24374.125/plugins/javascript-plugin/jsLanguageServicesImpl/external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-WS-253.31033.133" />
+        <option value="bundled-js-predefined-d6986cc7102b-31caf2ab9e3c-JavaScript-WS-261.24374.125" />
       </set>
     </attachedChunks>
   </component>
@@ -78,6 +171,9 @@
       <workItem from="1773595103033" duration="166000" />
       <workItem from="1773699981841" duration="47000" />
       <workItem from="1773769561907" duration="1394000" />
+      <workItem from="1774021419377" duration="121000" />
+      <workItem from="1774124630576" duration="24000" />
+      <workItem from="1780583824560" duration="3415000" />
     </task>
     <task id="LOCAL-00001" summary="feat: v5">
       <option name="closed" value="true" />
@@ -119,7 +215,15 @@
       <option name="project" value="LOCAL" />
       <updated>1773769591237</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="fix: update download links to version 1.2.0 in installation documentation">
+      <option name="closed" value="true" />
+      <created>1774021520108</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1774021520108</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -130,7 +234,8 @@
     <MESSAGE value="fix: fetch URL" />
     <MESSAGE value="fix: change repo URL" />
     <MESSAGE value="fix: update site URL in configuration" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: update site URL in configuration" />
+    <MESSAGE value="fix: update download links to version 1.2.0 in installation documentation" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: update download links to version 1.2.0 in installation documentation" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

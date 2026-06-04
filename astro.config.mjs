@@ -194,6 +194,17 @@ export default defineConfig({
             },
           ]
         },
+        {
+          label: 'PayMoi',
+          translations: { th: "เปย์มัว" },
+          items: [
+            {
+              label: 'การใช้งานเปย์มัว',
+              translations: { th: "การใช้งานเปย์มัว" },
+              slug: 'paymoi/guides'
+            },
+          ]
+        },
       ],
     }),
   ],
